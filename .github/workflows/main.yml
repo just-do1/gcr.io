@@ -25,7 +25,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: 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
+          password: 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
       - name: Docker pull and push
         run: |
           docker pull k8s.gcr.io/ingress-nginx/controller:v0.35.0  
