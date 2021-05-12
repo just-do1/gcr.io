@@ -28,9 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/build-image/debian-iptables:buster-v1.5.0
-          docker pull k8s.gcr.io/build-image/go-runner:v2.3.1-go1.16.1-buster.0
-          docker tag k8s.gcr.io/build-image/debian-iptables:buster-v1.5.0 ghcr.io/just-do1/build-image/debian-iptables:buster-v1.5.0 
-          docker tag k8s.gcr.io/build-image/go-runner:v2.3.1-go1.16.1-buster.0 ghcr.io/just-do1/build-image/go-runner:v2.3.1-go1.16.1-buster.0
-          docker push ghcr.io/just-do1/build-image/debian-iptables:buster-v1.5.0 
-          docker push ghcr.io/just-do1/build-image/go-runner:v2.3.1-go1.16.1-buster.0
+          docker pull k8s.gcr.io/build-image/setcap:buster-v1.4.0
+          docker tag k8s.gcr.io/build-image/setcap:buster-v1.4.0 ghcr.io/just-do1/build-image/setcap:buster-v1.4.0
+          docker push ghcr.io/just-do1/build-image/setcap:buster-v1.4.0
