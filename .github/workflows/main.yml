@@ -28,6 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/ingress-nginx/controller:v0.35.0  
-          docker tag  k8s.gcr.io/ingress-nginx/controller:v0.35.0  ghcr.io/just-do1/ingress-nginx/controller:v0.35.0       
-          docker push ghcr.io/just-do1/ingress-nginx/controller:v0.35.0
+          docker pull k8s.gcr.io/build-image/kube-cross:v1.16.1-1  
+          docker tag  k8s.gcr.io/build-image/kube-cross:v1.16.1-1  ghcr.io/just-do1/build-image/kube-cross:v1.16.1-1      
+          docker push ghcr.io/just-do1/build-image/kube-cross:v1.16.1-1
