@@ -28,6 +28,17 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/build-image/setcap:buster-v1.4.0
-          docker tag k8s.gcr.io/build-image/setcap:buster-v1.4.0 ghcr.io/just-do1/build-image/setcap:buster-v1.4.0
-          docker push ghcr.io/just-do1/build-image/setcap:buster-v1.4.0
+          docker pull k8s.gcr.io/etcd:3.4.13-0 
+          docker pull k8s.gcr.io/coredns/coredns:v1.8.0
+          docker pull k8s.gcr.io/build-image/debian-base:v2.1.0
+          docker pull k8s.gcr.io/pause:3.3
+
+          docker tag k8s.gcr.io/etcd:3.4.13-0 ghcr.io/just-do1/build-image/etcd:3.4.13-0
+          docker tag k8s.gcr.io/coredns/coredns:v1.8.0 ghcr.io/just-do1/build-image/coredns:v1.8.0
+          docker tag k8s.gcr.io/build-image/debian-base:v2.1.0 ghcr.io/just-do1/build-image/debain-base:v2.1.0
+          docker tag k8s.gcr.io/pause:3.3 ghcr.io/just-do1/build-image/pause:3.3
+
+          docker push ghcr.io/just-do1/build-image/etcd:3.4.13-0
+          docker push ghcr.io/just-do1/build-image/coredns:v1.8.0
+          docker push ghcr.io/just-do1/build-image/debain-base:v2.1.0
+          docker push ghcr.io/just-do1/build-image/pause:3.3
