@@ -32,4 +32,4 @@ jobs:
 
           docker tag gcr.io/distroless/static:nonroot ghcr.io/just-do1/distroless/static:nonroot
 
-          docker ghcr.io/just-do1/distroless/static:nonroot
+          docker push ghcr.io/just-do1/distroless/static:nonroot
