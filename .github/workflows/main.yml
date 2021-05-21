@@ -28,17 +28,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/etcd:3.4.13-0 
-          docker pull k8s.gcr.io/coredns/coredns:v1.8.0
-          docker pull k8s.gcr.io/build-image/debian-base:v2.1.0
-          docker pull k8s.gcr.io/pause:3.3
+          docker pull gcr.io/distroless/static:nonroot
 
-          docker tag k8s.gcr.io/etcd:3.4.13-0 ghcr.io/just-do1/build-image/etcd:3.4.13-0
-          docker tag k8s.gcr.io/coredns/coredns:v1.8.0 ghcr.io/just-do1/build-image/coredns:v1.8.0
-          docker tag k8s.gcr.io/build-image/debian-base:v2.1.0 ghcr.io/just-do1/build-image/debain-base:v2.1.0
-          docker tag k8s.gcr.io/pause:3.3 ghcr.io/just-do1/build-image/pause:3.3
+          docker tag gcr.io/distroless/static:nonroot ghcr.io/just-do1/distroless/static:nonroot
 
-          docker push ghcr.io/just-do1/build-image/etcd:3.4.13-0
-          docker push ghcr.io/just-do1/build-image/coredns:v1.8.0
-          docker push ghcr.io/just-do1/build-image/debain-base:v2.1.0
-          docker push ghcr.io/just-do1/build-image/pause:3.3
+          docker ghcr.io/just-do1/distroless/static:nonroot
