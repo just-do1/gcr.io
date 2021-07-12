@@ -28,8 +28,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull gcr.io/distroless/static:nonroot
+          docker gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
 
-          docker tag gcr.io/distroless/static:nonroot ghcr.io/just-do1/distroless/static:nonroot
+          docker tag gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0 ghcr.io/just-do1/kubebuilder/kube-rbac-proxy:v0.8.0
 
-          docker push ghcr.io/just-do1/distroless/static:nonroot
+          docker push ghcr.io/just-do1/kubebuilder/kube-rbac-proxy:v0.8.0
