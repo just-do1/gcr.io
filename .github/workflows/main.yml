@@ -28,7 +28,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
+          docker pull gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
 
           docker tag gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0 ghcr.io/just-do1/kubebuilder/kube-rbac-proxy:v0.8.0
 
