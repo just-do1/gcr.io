@@ -28,11 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.1.1
-          docker pull k8s.gcr.io/prometheus-adapter/prometheus-adapter:v0.9.0
-
-          docker tag k8s.gcr.io/kube-state-metrics/kube-state-metrics:v2.1.1 ghcr.io/just-do1/kube-state-metrics:v2.1.1
-          docker tag k8s.gcr.io/prometheus-adapter/prometheus-adapter:v0.9.0 ghcr.io/just-do1/prometheus-adapter:v0.9.0
-
-          docker push ghcr.io/just-do1/kube-state-metrics:v2.1.1
-          docker push ghcr.io/just-do1/prometheus-adapter:v0.9.0
+          docker pull k8s.gcr.io/hyperkube:v1.16.12
+          docker tag k8s.gcr.io/hyperkube:v1.16.12 ghcr.io/just-do1/hyperkube:v1.16.12
+          docker push ghcr.io/just-do1/hyperkube:v1.16.12
