@@ -28,6 +28,18 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          docker push ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+          docker pull k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.2.0
+          docker pull k8s.gcr.io/sig-storage/csi-provisioner:v2.2.2
+          docker pull k8s.gcr.io/sig-storage/csi-snapshotter:v4.1.1
+          docker pull k8s.gcr.io/sig-storage/csi-attacher:v3.2.1
+          docker pull k8s.gcr.io/sig-storage/csi-resizer:v1.2.0
+          docker tag k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.2.0 ghcr.io/just-do1/sig-storage/csi-node-driver-registrar:v2.2.0
+          docker tag k8s.gcr.io/sig-storage/csi-provisioner:v2.2.2 ghcr.io/just-do1/sig-storage/csi-provisioner:v2.2.2
+          docker tag k8s.gcr.io/sig-storage/csi-snapshotter:v4.1.1 ghcr.io/just-do1/sig-storage/csi-snapshotter:v4.1.1
+          docker tag k8s.gcr.io/sig-storage/csi-attacher:v3.2.1 ghcr.io/just-do1/sig-storage/csi-attacher:v3.2.1
+          docker tag k8s.gcr.io/sig-storage/csi-resizer:v1.2.0 ghcr.io/just-do1/sig-storage/csi-resizer:v1.2.0
+          docker push ghcr.io/just-do1/sig-storage/csi-node-driver-registrar:v2.2.0
+          docker push ghcr.io/just-do1/sig-storage/csi-provisioner:v2.2.2
+          docker push ghcr.io/just-do1/sig-storage/csi-snapshotter:v4.1.1
+          docker push ghcr.io/just-do1/sig-storage/csi-attacher:v3.2.1
+          docker push ghcr.io/just-do1/sig-storage/csi-resizer:v1.2.0
