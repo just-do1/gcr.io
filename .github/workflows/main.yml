@@ -28,8 +28,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull ghcr.io/opsgenie/kubernetes-event-exporter:v0.11
+          docker pull k8s.gcr.io/ingress-nginx/controller:v0.49.0@sha256:e9707504ad0d4c119036b6d41ace4a33596139d3feb9ccb6617813ce48c3eeef
 
-          docker tag ghcr.io/opsgenie/kubernetes-event-exporter:v0.11 ghcr.io/just-do1/kube-event/kubernetes-event-exporter:v0.11
-
-          docker push ghcr.io/just-do1/kube-event/kubernetes-event-exporter:v0.11
+          docker tag k8s.gcr.io/ingress-nginx/controller:v0.49.0@sha256:e9707504ad0d4c119036b6d41ace4a33596139d3feb9ccb6617813ce48c3eeef ghcr.io/just-do1/ingress-nginx/controller:v0.49.0
+      
+          docker push ghcr.io/just-do1/ingress-nginx/controller:v0.49.0
