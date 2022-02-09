@@ -28,11 +28,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/e2e-test-images/httpd:2.4.38-1
-          docker pull k8s.gcr.io/e2e-test-images/httpd:2.4.39-1
+          docker pull gcr.io/google-containers/conformance:v1.18.6
 
-          docker tag k8s.gcr.io/e2e-test-images/httpd:2.4.38-1  ghcr.io/just-do1/sonobuoy/e2e-test-images-httpd:2.4.38-1
-          docker tag k8s.gcr.io/e2e-test-images/httpd:2.4.39-1  ghcr.io/just-do1/sonobuoy/e2e-test-images-httpd:2.4.39-1
+          docker tag gcr.io/google-containers/conformance:v1.18.6  ghcr.io/just-do1/sonobuoy/conformance:v1.18.6
       
-          docker push ghcr.io/just-do1/sonobuoy/e2e-test-images-httpd:2.4.38-1
-          docker push ghcr.io/just-do1/sonobuoy/e2e-test-images-httpd:2.4.39-1
+          docker push ghcr.io/just-do1/sonobuoy/conformance:v1.18.6
