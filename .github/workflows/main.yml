@@ -28,29 +28,59 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-            docker pull docker.io/library/httpd@sha256:e51bde8e50311efb12bfb2aeb4551b1342ecf15f9097d712ab243d26884b9fd2
-            docker pull docker.io/library/redis@sha256:4066c072251791e505e613ebb65220bc91eb38677779e0da0988224d8cb81852
-            docker pull docker.io/library/busybox@sha256:76582bc9c59276ea11459bf5ff4f54fd5b7fd23ff622d80479156108fdd26470
-            docker pull docker.io/library/httpd@sha256:f3f141fc8609b34723212d42afe66e41a498e1eb63ec1dda0de32ef16384d0df
-            docker pull docker.io/library/nginx@sha256:04c19a49fee7c479777a235e31482a8e265711f7a4e9a3c4261b1d91b5654f09
-            docker pull docker.io/library/nginx@sha256:4229b69b3ac4ca493123375ce9236dbf8eac859289ce74aea8a0aedc8dd96afb
-            docker pull docker.io/library/perl@sha256:b985d749a6a8918a169aa8d7fda00a96f03d170a5b83cdd7e055407f649f0706
-            docker pull docker.io/gluster/glusterdynamic-provisioner-arm64:v1.3
+            docker pull gcr.io/kubernetes-e2e-test-images/nonroot-arm64@sha256:602c129ca0ccc5efd74ea6aeb7ff3e94d5415ebd5157f9e186a04baa6607243f
+            docker pull gcr.io/kubernetes-e2e-test-images/volume/gluster-arm64@sha256:7d48b2cc150c4f13c48b318be05662ed760394ed3fb92ea7ee496c66214757dd
+            docker pull gcr.io/kubernetes-e2e-test-images/volume/iscsi-arm64@sha256:0cacd62f0ecd5f00fd3c25e88021e6cd7fb43533b1877d90224297fb683710a0
+            docker pull gcr.io/kubernetes-e2e-test-images/volume/nfs-arm64@sha256:cbcc72ad8702c9515d7ab125c6c70135e43dd82aca66fe0808d23893a3ce4139
+            docker pull gcr.io/kubernetes-e2e-test-images/volume/rbd-arm64@sha256:6fd216824b370e3293c1d64d8269a59bff4e0685aaa0b7569968bc7f59ce5d15
+            docker pull gcr.io/kubernetes-e2e-test-images/kitten-arm64@sha256:fbc805315cd3fc3adfa90848959193ae45808444e1eb9af855d32f1dfe11ded6
+            docker pull gcr.io/kubernetes-e2e-test-images/nautilus-arm64@sha256:fd2b5fe6b1525fa73fc9c72e6456e058851e6a49908c84ec8cb987cc6b83c937
+            docker pull gcr.io/kubernetes-e2e-test-images/metadata-concealment-arm64@sha256:468ef932150b7ab8c5a5626ea340a3c02df9d5df2edd54d8147e47f738e775a1
+            docker pull gcr.io/kubernetes-e2e-test-images/jessie-dnsutils-arm64@sha256:92105b23ab1bcc1f72b7deeb4b7d72b27b4ba9a47b292fbd4f58f4080f0621a2
+            docker pull gcr.io/kubernetes-e2e-test-images/regression-issue-74839-arm64@sha256:446a5236dd4f3755aaf865010a2f3eff1def9efe965818ff8755c9f64f68fe50
+            docker pull gcr.io/kubernetes-e2e-test-images/resource-consumer-arm64@sha256:2920ec347c92832f66bce27b16a8a897623a072255f65e09e3ba1da86affb48a
+            docker pull gcr.io/kubernetes-e2e-test-images/apparmor-loader-arm64@sha256:eabf1826a982da2df841a771f2b21170cabb7435107d6cc55bb7476f564cc553
+            docker pull gcr.io/kubernetes-e2e-test-images/mounttest-user-arm64@sha256:cc1b6959a230f66c1137807f2ee509fa8866dd31b2e3293ad5988a2727f3318c
+            docker pull gcr.io/kubernetes-e2e-test-images/nonewprivs-arm64@sha256:79149ac331f91a8d9af5511c94fb06dd6a394bd225eebc91990023e6511ad581
+            docker pull gcr.io/kubernetes-e2e-test-images/echoserver-arm64@sha256:f0186ab4b62b20090ad979828eac5bbd076b49968dd06c2ba2ff41294382e191
+            docker pull gcr.io/kubernetes-e2e-test-images/sample-apiserver-arm64@sha256:8a9128b86e81f8ad021c392408f611915134feb754ff707c4c761c849dd7d5e2
+            docker pull gcr.io/kubernetes-e2e-test-images/ipc-utils-arm64@sha256:fc01a0a53d20b56c71f8d21f491ba2f8324ff1b73e032d7c0e04db1cf0f04ec2
+            docker pull gcr.io/kubernetes-e2e-test-images/mounttest-arm64@sha256:141fa3671ef90e19aa65db4e3d9c3e8d7af1d8ce86b2a37f44cf41768c94195c
 
-            docker tag docker.io/library/httpd@sha256:e51bde8e50311efb12bfb2aeb4551b1342ecf15f9097d712ab243d26884b9fd2 ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.39-alpine
-            docker tag docker.io/library/redis@sha256:4066c072251791e505e613ebb65220bc91eb38677779e0da0988224d8cb81852 ghcr.io/just-do1/k8s-e2e-test/redis:5.0.5-alpine
-            docker tag docker.io/library/busybox@sha256:76582bc9c59276ea11459bf5ff4f54fd5b7fd23ff622d80479156108fdd26470 ghcr.io/just-do1/k8s-e2e-test/busybox:1.29
-            docker tag docker.io/library/httpd@sha256:f3f141fc8609b34723212d42afe66e41a498e1eb63ec1dda0de32ef16384d0df ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.38-alpine
-            docker tag docker.io/library/nginx@sha256:04c19a49fee7c479777a235e31482a8e265711f7a4e9a3c4261b1d91b5654f09 ghcr.io/just-do1/k8s-e2e-test/nginx:1.15-alpine
-            docker tag docker.io/library/nginx@sha256:4229b69b3ac4ca493123375ce9236dbf8eac859289ce74aea8a0aedc8dd96afb ghcr.io/just-do1/k8s-e2e-test/nginx:1.14-alpine
-            docker tag docker.io/library/perl@sha256:b985d749a6a8918a169aa8d7fda00a96f03d170a5b83cdd7e055407f649f0706 ghcr.io/just-do1/k8s-e2e-test/perl:5.26
-            docker tag docker.io/gluster/glusterdynamic-provisioner-arm64:v1.3 ghcr.io/just-do1/k8s-e2e-test/glusterdynamic-provisioner-arm64:v1.3
+            docker tag gcr.io/kubernetes-e2e-test-images/nonroot-arm64@sha256:602c129ca0ccc5efd74ea6aeb7ff3e94d5415ebd5157f9e186a04baa6607243f ghcr.io/just-do1/k8s-e2e-test/nonroot:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/volume/gluster-arm64@sha256:7d48b2cc150c4f13c48b318be05662ed760394ed3fb92ea7ee496c66214757dd ghcr.io/just-do1/k8s-e2e-test/gluster:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/volume/iscsi-arm64@sha256:0cacd62f0ecd5f00fd3c25e88021e6cd7fb43533b1877d90224297fb683710a0 ghcr.io/just-do1/k8s-e2e-test/iscsi:2.0
+            docker tag gcr.io/kubernetes-e2e-test-images/volume/nfs-arm64@sha256:cbcc72ad8702c9515d7ab125c6c70135e43dd82aca66fe0808d23893a3ce4139 ghcr.io/just-do1/k8s-e2e-test/nfs:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/volume/rbd-arm64@sha256:6fd216824b370e3293c1d64d8269a59bff4e0685aaa0b7569968bc7f59ce5d15 ghcr.io/just-do1/k8s-e2e-test/rbd:1.0.1
+            docker tag gcr.io/kubernetes-e2e-test-images/kitten-arm64@sha256:fbc805315cd3fc3adfa90848959193ae45808444e1eb9af855d32f1dfe11ded6 ghcr.io/just-do1/k8s-e2e-test/kitten:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/nautilus-arm64@sha256:fd2b5fe6b1525fa73fc9c72e6456e058851e6a49908c84ec8cb987cc6b83c937 ghcr.io/just-do1/k8s-e2e-test/nautilus:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/metadata-concealment-arm64@sha256:468ef932150b7ab8c5a5626ea340a3c02df9d5df2edd54d8147e47f738e775a1 ghcr.io/just-do1/k8s-e2e-test/metadata-concealment:1.2
+            docker tag gcr.io/kubernetes-e2e-test-images/jessie-dnsutils-arm64@sha256:92105b23ab1bcc1f72b7deeb4b7d72b27b4ba9a47b292fbd4f58f4080f0621a2 ghcr.io/just-do1/k8s-e2e-test/jessie-dnsutils:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/regression-issue-74839-arm64@sha256:446a5236dd4f3755aaf865010a2f3eff1def9efe965818ff8755c9f64f68fe50 ghcr.io/just-do1/k8s-e2e-test/regression-issue-74839-amd64:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/resource-consumer-arm64@sha256:2920ec347c92832f66bce27b16a8a897623a072255f65e09e3ba1da86affb48a ghcr.io/just-do1/k8s-e2e-test/resource-consumer:1.5
+            docker tag gcr.io/kubernetes-e2e-test-images/apparmor-loader-arm64@sha256:eabf1826a982da2df841a771f2b21170cabb7435107d6cc55bb7476f564cc553 ghcr.io/just-do1/k8s-e2e-test/apparmor-loader:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/mounttest-user-arm64@sha256:cc1b6959a230f66c1137807f2ee509fa8866dd31b2e3293ad5988a2727f3318c ghcr.io/just-do1/k8s-e2e-test/mounttest-user:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/nonewprivs-arm64@sha256:79149ac331f91a8d9af5511c94fb06dd6a394bd225eebc91990023e6511ad581 ghcr.io/just-do1/k8s-e2e-test/nonewprivs:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/echoserver-arm64@sha256:f0186ab4b62b20090ad979828eac5bbd076b49968dd06c2ba2ff41294382e191 ghcr.io/just-do1/k8s-e2e-test/echoserver:2.2
+            docker tag gcr.io/kubernetes-e2e-test-images/sample-apiserver-arm64@sha256:8a9128b86e81f8ad021c392408f611915134feb754ff707c4c761c849dd7d5e2 ghcr.io/just-do1/k8s-e2e-test/sample-apiserver:1.17
+docker tag gcr.io/kubernetes-e2e-test-images/ipc-utils-arm64@sha256:fc01a0a53d20b56c71f8d21f491ba2f8324ff1b73e032d7c0e04db1cf0f04ec2 ghcr.io/just-do1/k8s-e2e-test/ipc-utils:1.0
+docker tag gcr.io/kubernetes-e2e-test-images/mounttest-arm64@sha256:141fa3671ef90e19aa65db4e3d9c3e8d7af1d8ce86b2a37f44cf41768c94195c ghcr.io/just-do1/k8s-e2e-test/mounttest:1.0
 
-            docker push ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.39-alpine
-            docker push ghcr.io/just-do1/k8s-e2e-test/redis:5.0.5-alpine
-            docker push ghcr.io/just-do1/k8s-e2e-test/busybox:1.29
-            docker push ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.38-alpine
-            docker push ghcr.io/just-do1/k8s-e2e-test/nginx:1.15-alpine
-            docker push ghcr.io/just-do1/k8s-e2e-test/nginx:1.14-alpine
-            docker push ghcr.io/just-do1/k8s-e2e-test/perl:5.26
-            docker push ghcr.io/just-do1/k8s-e2e-test/glusterdynamic-provisioner-arm64:v1.3
+docker push ghcr.io/just-do1/k8s-e2e-test/nonroot:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/gluster:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/iscsi:2.0
+docker push ghcr.io/just-do1/k8s-e2e-test/nfs:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/rbd:1.0.1
+docker push ghcr.io/just-do1/k8s-e2e-test/kitten:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/nautilus:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/metadata-concealment:1.2
+docker push ghcr.io/just-do1/k8s-e2e-test/jessie-dnsutils:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/regression-issue-74839-amd64:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/resource-consumer:1.5
+docker push ghcr.io/just-do1/k8s-e2e-test/apparmor-loader:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/mounttest-user:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/nonewprivs:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/echoserver:2.2
+docker push ghcr.io/just-do1/k8s-e2e-test/sample-apiserver:1.17
+docker push ghcr.io/just-do1/k8s-e2e-test/ipc-utils:1.0
+docker push ghcr.io/just-do1/k8s-e2e-test/mounttest:1.0
