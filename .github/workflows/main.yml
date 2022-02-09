@@ -28,4 +28,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull k8s.gcr.io/kubernetes-e2e-test-images/jessie-dnsutils-arm64
+          docker pull gcr.io/kubernetes-e2e-test-images/nonroot-arm64@sha256:602c129ca0ccc5efd74ea6aeb7ff3e94d5415ebd5157f9e186a04baa6607243f
