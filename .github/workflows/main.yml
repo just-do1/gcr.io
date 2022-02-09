@@ -28,13 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull gcr.io/kubernetes-e2e-test-images/mounttest:1.0
-          docker pull gcr.io/kubernetes-e2e-test-images/mounttest-user:1.0
-          docker tag gcr.io/kubernetes-e2e-test-images/mounttest:1.0 ghcr.io/just-do1/kubernetes-e2e-test-images/mounttest:1.0
-          docker tag gcr.io/kubernetes-e2e-test-images/mounttest-user:1.0 ghcr.io/just-do1/kubernetes-e2e-test-images/mounttest-user:1.0
-          docker push ghcr.io/just-do1/kubernetes-e2e-test-images/mounttest:1.0
-          docker push ghcr.io/just-do1/kubernetes-e2e-test-images/mounttest-user:1.0
-
-          docker pull us.gcr.io/k8s-artifacts-prod/e2e-test-images/agnhost:2.12
-          docker tag us.gcr.io/k8s-artifacts-prod/e2e-test-images/agnhost:2.12 ghcr.io/just-do1/k8s-artifacts-prod/e2e-test-images/agnhost:2.12
-          docker push ghcr.io/just-do1/k8s-artifacts-prod/e2e-test-images/agnhost:2.12
+          docker pull gcr.io/kubernetes-e2e-test-images/jessie-dnsutils:1.0
+          docker tag gcr.io/kubernetes-e2e-test-images/jessie-dnsutils:1.0 ghcr.io/just-do1/kubernetes-e2e-test-images/jessie-dnsutils:1.0
+          docker push ghcr.io/just-do1/kubernetes-e2e-test-images/jessie-dnsutils:1.0
