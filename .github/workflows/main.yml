@@ -28,17 +28,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-            docker pull gcr.io/k8s-authenticated-test/agnhost-arm64@sha256:07b1783c39c9633f6af7c8d98dd09fba84359e71a594234530c33a8ea6035cb3
             docker pull gcr.io/google-containers/pause-arm64@sha256:31d3efd12022ffeffb3146bc10ae8beb890c80ed2f07363515580add7ed47636
             docker pull gcr.io/google-containers/etcd-arm64@sha256:fbc0f8b4861d23c9989edf877df7ae2533083e98c05687eb22b00422b9825c2f
-            docker pull gcr.io/k8s-authenticated-test/agnhost-arm64@sha256:07b1783c39c9633f6af7c8d98dd09fba84359e71a594234530c33a8ea6035cb3
 
-            docker tag gcr.io/k8s-authenticated-test/agnhost-arm64@sha256:07b1783c39c9633f6af7c8d98dd09fba84359e71a594234530c33a8ea6035cb3 ghcr.io/just-do1/k8s-e2e-test/agnhost:2.6
             docker tag gcr.io/google-containers/pause-arm64@sha256:31d3efd12022ffeffb3146bc10ae8beb890c80ed2f07363515580add7ed47636 ghcr.io/just-do1/k8s-e2e-test/pause:3.2
             docker tag gcr.io/google-containers/etcd-arm64@sha256:fbc0f8b4861d23c9989edf877df7ae2533083e98c05687eb22b00422b9825c2f ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.3
-            docker tag gcr.io/k8s-authenticated-test/agnhost-arm64@sha256:07b1783c39c9633f6af7c8d98dd09fba84359e71a594234530c33a8ea6035cb3 ghcr.io/just-do1/k8s-e2e-test/agnhost:2.12
 
-            docker push ghcr.io/just-do1/k8s-e2e-test/agnhost:2.6
             docker push ghcr.io/just-do1/k8s-e2e-test/pause:3.2
             docker push ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.3
-            docker push ghcr.io/just-do1/k8s-e2e-test/agnhost:2.12
