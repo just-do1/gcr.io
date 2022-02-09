@@ -35,7 +35,6 @@ jobs:
             docker pull k8s.gcr.io/prometheus-to-sd:v0.5.0
             docker pull k8s.gcr.io/sd-dummy-exporter:v0.2.0
             docker pull k8s.gcr.io/prometheus-dummy-exporter:v0.1.0
-            docker pull invalid.com/invalid/alpine:3.1
 
             docker tag gcr.io/kubernetes-e2e-test-images/cuda-vector-add:2.0 ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:2.0
             docker tag gcr.io/kubernetes-e2e-test-images/cuda-vector-add:1.0 ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:1.0
@@ -44,7 +43,6 @@ jobs:
             docker tag k8s.gcr.io/prometheus-to-sd:v0.5.0 ghcr.io/just-do1/k8s-e2e-test/prometheus-to-sd:v0.5.0
             docker tag k8s.gcr.io/sd-dummy-exporter:v0.2.0 ghcr.io/just-do1/k8s-e2e-test/sd-dummy-exporter:v0.2.0
             docker tag k8s.gcr.io/prometheus-dummy-exporter:v0.1.0 ghcr.io/just-do1/k8s-e2e-test/prometheus-dummy-exporter:v0.1.0
-            docker tag invalid.com/invalid/alpine:3.1 ghcr.io/just-do1/k8s-e2e-test/alpine:3.1
 
             docker push ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:2.0
             docker push ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:1.0
@@ -53,4 +51,3 @@ jobs:
             docker push ghcr.io/just-do1/k8s-e2e-test/prometheus-to-sd:v0.5.0
             docker push ghcr.io/just-do1/k8s-e2e-test/sd-dummy-exporter:v0.2.0
             docker push ghcr.io/just-do1/k8s-e2e-test/prometheus-dummy-exporter:v0.1.0
-            docker push ghcr.io/just-do1/k8s-e2e-test/alpine:3.1
