@@ -28,26 +28,29 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-            docker pull gcr.io/kubernetes-e2e-test-images/cuda-vector-add:2.0
-            docker pull gcr.io/kubernetes-e2e-test-images/cuda-vector-add:1.0
-            docker pull gcr.io/google-containers/startup-script:v1
-            docker pull gcr.io/k8s-staging-csi/nfs-provisioner:v2.2.2
-            docker pull k8s.gcr.io/prometheus-to-sd:v0.5.0
-            docker pull k8s.gcr.io/sd-dummy-exporter:v0.2.0
-            docker pull k8s.gcr.io/prometheus-dummy-exporter:v0.1.0
+            docker pull docker.io/library/httpd@sha256:e51bde8e50311efb12bfb2aeb4551b1342ecf15f9097d712ab243d26884b9fd2
+            docker pull docker.io/library/redis@sha256:4066c072251791e505e613ebb65220bc91eb38677779e0da0988224d8cb81852
+            docker pull docker.io/library/busybox@sha256:76582bc9c59276ea11459bf5ff4f54fd5b7fd23ff622d80479156108fdd26470
+            docker pull docker.io/library/httpd@sha256:f3f141fc8609b34723212d42afe66e41a498e1eb63ec1dda0de32ef16384d0df
+            docker pull docker.io/library/nginx@sha256:04c19a49fee7c479777a235e31482a8e265711f7a4e9a3c4261b1d91b5654f09
+            docker pull docker.io/library/nginx@sha256:4229b69b3ac4ca493123375ce9236dbf8eac859289ce74aea8a0aedc8dd96afb
+            docker pull docker.io/library/perl@sha256:b985d749a6a8918a169aa8d7fda00a96f03d170a5b83cdd7e055407f649f0706
+            docker pull docker.io/gluster/glusterdynamic-provisioner-arm64:v1.3
 
-            docker tag gcr.io/kubernetes-e2e-test-images/cuda-vector-add:2.0 ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:2.0
-            docker tag gcr.io/kubernetes-e2e-test-images/cuda-vector-add:1.0 ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:1.0
-            docker tag gcr.io/google-containers/startup-script:v1 ghcr.io/just-do1/k8s-e2e-test/startup-script:v1
-            docker tag gcr.io/k8s-staging-csi/nfs-provisioner:v2.2.2 ghcr.io/just-do1/k8s-e2e-test/nfs-provisioner:v2.2.2
-            docker tag k8s.gcr.io/prometheus-to-sd:v0.5.0 ghcr.io/just-do1/k8s-e2e-test/prometheus-to-sd:v0.5.0
-            docker tag k8s.gcr.io/sd-dummy-exporter:v0.2.0 ghcr.io/just-do1/k8s-e2e-test/sd-dummy-exporter:v0.2.0
-            docker tag k8s.gcr.io/prometheus-dummy-exporter:v0.1.0 ghcr.io/just-do1/k8s-e2e-test/prometheus-dummy-exporter:v0.1.0
+            docker tag docker.io/library/httpd@sha256:e51bde8e50311efb12bfb2aeb4551b1342ecf15f9097d712ab243d26884b9fd2 ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.39-alpine
+            docker tag docker.io/library/redis@sha256:4066c072251791e505e613ebb65220bc91eb38677779e0da0988224d8cb81852 ghcr.io/just-do1/k8s-e2e-test/redis:5.0.5-alpine
+            docker tag docker.io/library/busybox@sha256:76582bc9c59276ea11459bf5ff4f54fd5b7fd23ff622d80479156108fdd26470 ghcr.io/just-do1/k8s-e2e-test/busybox:1.29
+            docker tag docker.io/library/httpd@sha256:f3f141fc8609b34723212d42afe66e41a498e1eb63ec1dda0de32ef16384d0df ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.38-alpine
+            docker tag docker.io/library/nginx@sha256:04c19a49fee7c479777a235e31482a8e265711f7a4e9a3c4261b1d91b5654f09 ghcr.io/just-do1/k8s-e2e-test/nginx:1.15-alpine
+            docker tag docker.io/library/nginx@sha256:4229b69b3ac4ca493123375ce9236dbf8eac859289ce74aea8a0aedc8dd96afb ghcr.io/just-do1/k8s-e2e-test/nginx:1.14-alpine
+            docker tag docker.io/library/perl@sha256:b985d749a6a8918a169aa8d7fda00a96f03d170a5b83cdd7e055407f649f0706 ghcr.io/just-do1/k8s-e2e-test/perl:5.26
+            docker tag docker.io/gluster/glusterdynamic-provisioner-arm64:v1.3 ghcr.io/just-do1/k8s-e2e-test/glusterdynamic-provisioner-arm64:v1.3
 
-            docker push ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:2.0
-            docker push ghcr.io/just-do1/k8s-e2e-test/cuda-vector-add:1.0
-            docker push ghcr.io/just-do1/k8s-e2e-test/startup-script:v1
-            docker push ghcr.io/just-do1/k8s-e2e-test/nfs-provisioner:v2.2.2
-            docker push ghcr.io/just-do1/k8s-e2e-test/prometheus-to-sd:v0.5.0
-            docker push ghcr.io/just-do1/k8s-e2e-test/sd-dummy-exporter:v0.2.0
-            docker push ghcr.io/just-do1/k8s-e2e-test/prometheus-dummy-exporter:v0.1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.39-alpine
+            docker push ghcr.io/just-do1/k8s-e2e-test/redis:5.0.5-alpine
+            docker push ghcr.io/just-do1/k8s-e2e-test/busybox:1.29
+            docker push ghcr.io/just-do1/k8s-e2e-test/httpd:2.4.38-alpine
+            docker push ghcr.io/just-do1/k8s-e2e-test/nginx:1.15-alpine
+            docker push ghcr.io/just-do1/k8s-e2e-test/nginx:1.14-alpine
+            docker push ghcr.io/just-do1/k8s-e2e-test/perl:5.26
+            docker push ghcr.io/just-do1/k8s-e2e-test/glusterdynamic-provisioner-arm64:v1.3
