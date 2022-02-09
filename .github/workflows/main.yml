@@ -63,24 +63,24 @@ jobs:
             docker tag gcr.io/kubernetes-e2e-test-images/nonewprivs-arm64@sha256:79149ac331f91a8d9af5511c94fb06dd6a394bd225eebc91990023e6511ad581 ghcr.io/just-do1/k8s-e2e-test/nonewprivs:1.0
             docker tag gcr.io/kubernetes-e2e-test-images/echoserver-arm64@sha256:f0186ab4b62b20090ad979828eac5bbd076b49968dd06c2ba2ff41294382e191 ghcr.io/just-do1/k8s-e2e-test/echoserver:2.2
             docker tag gcr.io/kubernetes-e2e-test-images/sample-apiserver-arm64@sha256:8a9128b86e81f8ad021c392408f611915134feb754ff707c4c761c849dd7d5e2 ghcr.io/just-do1/k8s-e2e-test/sample-apiserver:1.17
-docker tag gcr.io/kubernetes-e2e-test-images/ipc-utils-arm64@sha256:fc01a0a53d20b56c71f8d21f491ba2f8324ff1b73e032d7c0e04db1cf0f04ec2 ghcr.io/just-do1/k8s-e2e-test/ipc-utils:1.0
-docker tag gcr.io/kubernetes-e2e-test-images/mounttest-arm64@sha256:141fa3671ef90e19aa65db4e3d9c3e8d7af1d8ce86b2a37f44cf41768c94195c ghcr.io/just-do1/k8s-e2e-test/mounttest:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/ipc-utils-arm64@sha256:fc01a0a53d20b56c71f8d21f491ba2f8324ff1b73e032d7c0e04db1cf0f04ec2 ghcr.io/just-do1/k8s-e2e-test/ipc-utils:1.0
+            docker tag gcr.io/kubernetes-e2e-test-images/mounttest-arm64@sha256:141fa3671ef90e19aa65db4e3d9c3e8d7af1d8ce86b2a37f44cf41768c94195c ghcr.io/just-do1/k8s-e2e-test/mounttest:1.0
 
-docker push ghcr.io/just-do1/k8s-e2e-test/nonroot:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/gluster:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/iscsi:2.0
-docker push ghcr.io/just-do1/k8s-e2e-test/nfs:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/rbd:1.0.1
-docker push ghcr.io/just-do1/k8s-e2e-test/kitten:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/nautilus:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/metadata-concealment:1.2
-docker push ghcr.io/just-do1/k8s-e2e-test/jessie-dnsutils:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/regression-issue-74839-amd64:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/resource-consumer:1.5
-docker push ghcr.io/just-do1/k8s-e2e-test/apparmor-loader:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/mounttest-user:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/nonewprivs:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/echoserver:2.2
-docker push ghcr.io/just-do1/k8s-e2e-test/sample-apiserver:1.17
-docker push ghcr.io/just-do1/k8s-e2e-test/ipc-utils:1.0
-docker push ghcr.io/just-do1/k8s-e2e-test/mounttest:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/nonroot:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/gluster:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/iscsi:2.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/nfs:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/rbd:1.0.1
+            docker push ghcr.io/just-do1/k8s-e2e-test/kitten:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/nautilus:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/metadata-concealment:1.2
+            docker push ghcr.io/just-do1/k8s-e2e-test/jessie-dnsutils:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/regression-issue-74839-amd64:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/resource-consumer:1.5
+            docker push ghcr.io/just-do1/k8s-e2e-test/apparmor-loader:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/mounttest-user:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/nonewprivs:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/echoserver:2.2
+            docker push ghcr.io/just-do1/k8s-e2e-test/sample-apiserver:1.17
+            docker push ghcr.io/just-do1/k8s-e2e-test/ipc-utils:1.0
+            docker push ghcr.io/just-do1/k8s-e2e-test/mounttest:1.0
