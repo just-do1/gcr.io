@@ -28,8 +28,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-            docker pull gcr.io/google-containers/etcd:3.4.15
+            docker pull gcr.io/google-containers/etcd:3.4.9
             
-            docker tag gcr.io/google-containers/etcd:3.4.15 ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.15
+            docker tag gcr.io/google-containers/etcd:3.4.9 ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.9
             
-            docker push ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.15
+            docker push ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.9
