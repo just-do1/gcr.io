@@ -32,4 +32,4 @@ jobs:
             
             docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
             
-            docker push ghcr.io/just-do1/k8s-e2e-test/etcd:3.4.9
+            docker push ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
