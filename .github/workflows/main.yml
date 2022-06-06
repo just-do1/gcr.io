@@ -28,8 +28,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-            docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+            docker pull k8s.gcr.io/e2e-test-images/jessie-dnsutils:1.3
             
-            docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+            docker tag k8s.gcr.io/e2e-test-images/jessie-dnsutils:1.3 ghcr.io/just-do1/e2e-test-images/jessie-dnsutils:1.3
             
-            docker push ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+            docker push ghcr.io/just-do1/e2e-test-images/jessie-dnsutils:1.3
