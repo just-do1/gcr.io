@@ -28,6 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull mcr.microsoft.com/powershell:nanoserver@sha256:b6d5ff841b78bdf2dfed7550000fd4f3437385b8fa686ec0f010be24777654d6
-          docker tag mcr.microsoft.com/powershell:nanoserver@sha256:b6d5ff841b78bdf2dfed7550000fd4f3437385b8fa686ec0f010be24777654d6 ghcr.io/just-do1/tekton-pipeline/powershell:v0.36.0
-          docker push ghcr.io/just-do1/tekton-pipeline/powershell:v0.36.0
+          docker pull gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.26.0@sha256:d3963622f12448e566e3d4afb27f9b47e71d8fd8b38bab7edbbacbb9c75e331e
+          docker tag gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.26.0@sha256:d3963622f12448e566e3d4afb27f9b47e71d8fd8b38bab7edbbacbb9c75e331e ghcr.io/just-do1/tekton/ashboard:v0.26
+          docker push ghcr.io/just-do1/tekton/ashboard:v0.26
