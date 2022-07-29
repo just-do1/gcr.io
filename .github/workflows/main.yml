@@ -28,6 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull --platform arm photon:2.0
-          docker tag photon:2.0 ghcr.io/just-do1/tekton/photon:2.0-arm
-          docker push ghcr.io/just-do1/tekton/photon:2.0-arm
+          docker pull rancher/local-path-provisioner:v0.0.22
+          docker tag rancher/local-path-provisioner:v0.0.22 ghcr.io/just-do1/rancher/local-path-provisioner:v0.0.22
+          docker push ghcr.io/just-do1/rancher/local-path-provisioner:v0.0.22
