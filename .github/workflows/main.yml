@@ -28,6 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          docker tag registry.k8s.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          docker push ghcr.io/just-do1/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+          docker pull debian:bookworm
+          docker tag debian:bookworm ghcr.io/just-do1/sig-storage/debian:bookworm
+          docker push ghcr.io/just-do1/sig-storage/debian:bookworm
