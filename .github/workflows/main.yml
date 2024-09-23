@@ -28,6 +28,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull debian:bookworm
-          docker tag debian:bookworm ghcr.io/just-do1/sig-storage/debian:bookworm
-          docker push ghcr.io/just-do1/sig-storage/debian:bookworm
+          docker pull alpine:3.17.0
+          docker tag alpine:3.17.0 ghcr.io/just-do1/sig-storage/alpine:3.17.0
+          docker push ghcr.io/just-do1/sig-storage/alpine:3.17.0
