@@ -34,12 +34,12 @@ jobs:
 
       - name: download
         run: |
-          wget https://download.gnome.org/sources/glib/2.81/glib-2.81.0.tar.xz
+          wget https://tukaani.org/xz/xz-5.4.5.tar.xz
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
           # Artifact name
-          name: glib-2.81.0.tar.xz
+          name: xz-5.4.5.tar.xz
           # Path of the directory containing the static assets.
           path: ./
           # Duration after which artifact will expire in days.
