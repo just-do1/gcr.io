@@ -34,12 +34,12 @@ jobs:
 
       - name: download
         run: |
-          wget https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.bz2
+          wget https://ppc.land/content/files/2025/01/Newwhitepaper_Agents2.pdf
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
           # Artifact name
-          name: boost_1_77_0.tar.bz2
+          name: Newwhitepaper_Agents2.pdf
           # Path of the directory containing the static assets.
           path: ./
           # Duration after which artifact will expire in days.
