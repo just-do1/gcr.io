@@ -28,9 +28,9 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Docker pull and push
         run: |
-          docker pull nginx:1.27.4
-          docker tag  nginx:1.27.4 ghcr.io/just-do1/sig-storage/nginx:1.27.4
-          docker push ghcr.io/just-do1/sig-storage/nginx:1.27.4
+          docker pull httpd:2.4
+          docker tag  httpd:2.4 ghcr.io/just-do1/sig-storage/httpd:2.4
+          docker push ghcr.io/just-do1/sig-storage/httpd:2.4
 
       # - name: download
       #   run: |
