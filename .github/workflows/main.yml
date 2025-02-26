@@ -29,8 +29,8 @@ jobs:
       - name: Docker pull and push
         run: |
           docker pull httpd:2.4
-          docker tag  httpd:2.4 ghcr.io/just-do1/sig-storage/httpd:2.4
-          docker push ghcr.io/Kevin-WangX/sig-storage/nginx:1.27.4
+          docker tag  httpd:2.4 ghcr.io/Kevin-WangXing/sig-storage/httpd:2.4
+          docker push ghcr.io/Kevin-WangXing/sig-storage/nginx:1.27.4
 
       # - name: download
       #   run: |
