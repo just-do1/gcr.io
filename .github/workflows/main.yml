@@ -1,48 +1,27 @@
-# This is a basic workflow to help you get started with Actions
-
 name: GItGoogleContainer
 
-# Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
+    branches:
+      - main
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - uses: actions/checkout@v2
+      - name: Check out repository
+        uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Login in Docker Registry
+      - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GHCR_PAT }} # Change this to use your PAT
+
       - name: Docker pull and push
         run: |
           docker pull httpd:2.4
-          docker tag  httpd:2.4 ghcr.io/stark/sig-storage/httpd:2.4
-          docker push ghcr.io/stark/sig-storage/httpd:2.4
-
-      # - name: download
-      #   run: |
-      #     wget https://ppc.land/content/files/2025/01/Newwhitepaper_Agents2.pdf
-      # - name: Upload GitHub Pages artifact
-      #   uses: actions/upload-pages-artifact@v3.0.1
-      #   with:
-      #     # Artifact name
-      #     name: Newwhitepaper_Agents2.pdf
-      #     # Path of the directory containing the static assets.
-      #     path: ./
-      #     # Duration after which artifact will expire in days.
-      #     retention-days: 1
-          
-          
+          docker tag httpd:2.4 ghcr.io/${{ github.repository_owner }}/sig-storage/httpd:2.4
+          docker push ghcr.io/${{ github.repository_owner }}/sig-storage/httpd:2.4
