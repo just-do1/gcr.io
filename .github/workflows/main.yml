@@ -17,14 +17,20 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: ${{ github.actor }}
+        username: stark
         password: ${{ secrets.CR_PAT }}
 
     - name: Pull Docker image from Docker Hub
-      run: docker pull nginx:1.27.4
+      run: |
+        echo "Pulling Docker image: nginx:1.27.4"
+        docker pull nginx:1.27.4
 
     - name: Tag Docker image for GitHub Packages
-      run: docker tag nginx:1.27.4 ghcr.io/${{ github.actor }}/nginx:1.27.4
+      run: |
+        echo "Tagging Docker image for GitHub Packages"
+        docker tag nginx:1.27.4 ghcr.io/stark/sig-storage/nginx:1.27.4
 
     - name: Push Docker image to GitHub Container Registry
-      run: docker push ghcr.io/${{ github.actor }}/nginx:1.27.4
+      run: |
+        echo "Pushing Docker image to GitHub Container Registry"
+        docker push ghcr.io/stark/sig-storage/nginx:1.27.4
