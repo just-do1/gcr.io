@@ -3,7 +3,10 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - main
+      - '*'  # 所有分支
+  pull_request:
+    branches:
+      - '*'  # 所有分支
 
 jobs:
   build-and-push:
