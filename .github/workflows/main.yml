@@ -3,10 +3,10 @@ name: Docker Build and Push
 on:
   push:
     branches:
-      - '*'  # 所有分支
+      - '*'  # 触发所有分支
   pull_request:
     branches:
-      - '*'  # 所有分支
+      - '*'  # 触发所有分支
 
 jobs:
   build-and-push:
@@ -20,7 +20,7 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: ghcr.io
-        username: stark
+        username: ${{ github.repository_owner }}
         password: ${{ secrets.CR_PAT }}
 
     - name: Pull Docker image from Docker Hub
@@ -30,10 +30,12 @@ jobs:
 
     - name: Tag Docker image for GitHub Packages
       run: |
+        OWNER_LOWERCASE=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
         echo "Tagging Docker image for GitHub Packages"
-        docker tag nginx:1.27.4 ghcr.io/stark/sig-storage/nginx:1.27.4
+        docker tag nginx:1.27.4 ghcr.io/${OWNER_LOWERCASE}/sig-storage/nginx:1.27.4
 
     - name: Push Docker image to GitHub Container Registry
       run: |
+        OWNER_LOWERCASE=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
         echo "Pushing Docker image to GitHub Container Registry"
-        docker push ghcr.io/stark/sig-storage/nginx:1.27.4
+        docker push ghcr.io/${OWNER_LOWERCASE}/sig-storage/nginx:1.27.4
