@@ -29,9 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull nginx:1.27.4
-          docker tag  nginx:1.27.4 ghcr.io/just-do1/sig-storage/nginx:1.27.4
-          # docker push ghcr.io/just-do1/sig-storage/nginx:1.27.4
+          docker pull golang:1.23.6
+          docker tag golang:1.23.6 ghcr.io/just-do1/sig-storage/golang:1.23.6
+          docker push ghcr.io/just-do1/sig-storage/golang:1.23.6
 
       # - name: download
       #   run: |
