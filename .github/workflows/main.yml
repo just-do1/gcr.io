@@ -12,6 +12,10 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
 
+    env:
+      IMAGE_NAME: osixia/openldap
+      IMAGE_VERSION: 1.5.0
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -25,18 +29,18 @@ jobs:
 
     - name: Pull Docker image from Docker Hub
       run: |
-        echo "Pulling Docker image: httpd:2.4"
-        docker pull httpd:2.4
+        echo "Pulling Docker image: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}"
+        docker pull ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
 
     - name: Tag Docker image for GitHub Packages
       run: |
         OWNER_LOWERCASE=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
         echo "Tagging Docker image for GitHub Packages"
-        echo "ghcr.io/${OWNER_LOWERCASE}/sig-storage/httpd:2.4"
-        docker tag httpd:2.4 ghcr.io/${OWNER_LOWERCASE}/sig-storage/httpd:2.4
+        echo "ghcr.io/${OWNER_LOWERCASE}/sig-storage/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}"
+        docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }} ghcr.io/${OWNER_LOWERCASE}/sig-storage/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
 
     - name: Push Docker image to GitHub Container Registry
       run: |
         OWNER_LOWERCASE=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
         echo "Pushing Docker image to GitHub Container Registry"
-        docker push ghcr.io/${OWNER_LOWERCASE}/sig-storage/httpd:2.4
+        docker push ghcr.io/${OWNER_LOWERCASE}/sig-storage/${{ env.IMAGE_NAME }}:${{ env.IMAGE_VERSION }}
