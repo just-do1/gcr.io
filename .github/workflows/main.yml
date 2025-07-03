@@ -55,7 +55,18 @@ jobs:
           docker tag nginx:stable ghcr.io/just-do1/dify/nginx:stable
           docker tag postgres:15-alpine ghcr.io/just-do1/dify/postgres:15-alpine
           docker tag langgenius/dify-plugin-daemon:0.1.0-local ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.0-local
-          
+
+          docker push ghcr.io/just-do1/dify/postgres:15-alpine
+          docker push ghcr.io/just-do1/dify/redis:6-alpine
+          docker push ghcr.io/just-do1/dify/weaviate:1.19.0
+          docker push ghcr.io/just-do1/dify/dify-sandbox:0.2.12
+          docker push ghcr.io/just-do1/dify/squid:latest
+          docker push ghcr.io/just-do1/dify/dify-api:1.4.0
+          docker push ghcr.io/just-do1/dify/dify-api:1.4.0
+          docker push ghcr.io/just-do1/dify/dify-web:1.4.0
+          docker push ghcr.io/just-do1/dify/nginx:stable
+          docker push ghcr.io/just-do1/dify/postgres:15-alpine
+          docker push ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.0-local
 
       # - name: download
       #   run: |
