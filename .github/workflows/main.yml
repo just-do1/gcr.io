@@ -32,41 +32,9 @@ jobs:
           # docker pull golang:1.23.6
           # docker tag golang:1.23.6 ghcr.io/just-do1/sig-storage/golang:1.23.6
           # docker push ghcr.io/just-do1/sig-storage/golang:1.23.6
-          docker pull postgres:15-alpine
-          docker pull redis:6-alpine
-          docker pull semitechnologies/weaviate:1.19.0
-          docker pull langgenius/dify-sandbox:0.2.12
-          docker pull ubuntu/squid:latest
-          docker pull langgenius/dify-api:1.4.0
-          docker pull langgenius/dify-api:1.4.0
-          docker pull langgenius/dify-web:1.4.0
-          docker pull nginx:stable
-          docker pull postgres:15-alpine
-          docker pull langgenius/dify-plugin-daemon:0.1.0-local
-
-          docker tag postgres:15-alpine ghcr.io/just-do1/dify/postgres:15-alpine
-          docker tag redis:6-alpine ghcr.io/just-do1/dify/redis:6-alpine
-          docker tag semitechnologies/weaviate:1.19.0 ghcr.io/just-do1/dify/weaviate:1.19.0
-          docker tag langgenius/dify-sandbox:0.2.12 ghcr.io/just-do1/dify/dify-sandbox:0.2.12
-          docker tag ubuntu/squid:latest ghcr.io/just-do1/dify/squid:latest
-          docker tag langgenius/dify-api:1.4.0 ghcr.io/just-do1/dify/dify-api:1.4.0
-          docker tag langgenius/dify-api:1.4.0 ghcr.io/just-do1/dify/dify-api:1.4.0
-          docker tag langgenius/dify-web:1.4.0 ghcr.io/just-do1/dify/dify-web:1.4.0
-          docker tag nginx:stable ghcr.io/just-do1/dify/nginx:stable
-          docker tag postgres:15-alpine ghcr.io/just-do1/dify/postgres:15-alpine
-          docker tag langgenius/dify-plugin-daemon:0.1.0-local ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.0-local
-
-          docker push ghcr.io/just-do1/dify/postgres:15-alpine
-          docker push ghcr.io/just-do1/dify/redis:6-alpine
-          docker push ghcr.io/just-do1/dify/weaviate:1.19.0
-          docker push ghcr.io/just-do1/dify/dify-sandbox:0.2.12
-          docker push ghcr.io/just-do1/dify/squid:latest
-          docker push ghcr.io/just-do1/dify/dify-api:1.4.0
-          docker push ghcr.io/just-do1/dify/dify-api:1.4.0
-          docker push ghcr.io/just-do1/dify/dify-web:1.4.0
-          docker push ghcr.io/just-do1/dify/nginx:stable
-          docker push ghcr.io/just-do1/dify/postgres:15-alpine
-          docker push ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.0-local
+          docker pull langgenius/dify-plugin-daemon:0.1.1-local
+          docker tag langgenius/dify-plugin-daemon:0.1.1-local ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.1-local
+          docker push ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.1-local
 
       # - name: download
       #   run: |
