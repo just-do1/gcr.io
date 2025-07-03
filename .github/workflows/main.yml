@@ -32,9 +32,48 @@ jobs:
           # docker pull golang:1.23.6
           # docker tag golang:1.23.6 ghcr.io/just-do1/sig-storage/golang:1.23.6
           # docker push ghcr.io/just-do1/sig-storage/golang:1.23.6
-          docker pull langgenius/dify-plugin-daemon:0.1.1-local
-          docker tag langgenius/dify-plugin-daemon:0.1.1-local ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.1-local
-          docker push ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.1-local
+          docker pull langgenius/dify-api:1.5.0
+          docker pull langgenius/dify-web:1.5.0
+          docker pull langgenius/dify-sandbox:0.2.12
+          docker pull nginx:latest
+          docker pull ubuntu/squid:latest
+          docker pull langgenius/dify-plugin-daemon:0.1.2-local
+          docker pull docker.io/bitnami/postgresql:15.3.0-debian-11-r7
+          docker pull docker.io/semitechnologies/weaviate:1.19.1
+          docker pull docker.io/alpine:latest
+          docker pull docker.io/bitnami/redis:7.0.11-debian-11-r12
+          docker pull docker.io/bitnami/redis-sentinel:7.0.11-debian-11-r10
+          docker pull docker.io/bitnami/redis-exporter:1.50.0-debian-11-r13
+          docker pull docker.io/bitnami/bitnami-shell:11-debian-11-r118
+          
+          docker tag langgenius/dify-api:1.5.0 ghcr.io/just-do1/dify/dify-api:1.5.0
+          docker tag langgenius/dify-web:1.5.0 ghcr.io/just-do1/dify/dify-web:1.5.0
+          docker tag langgenius/dify-sandbox:0.2.12 ghcr.io/just-do1/dify/dify-sandbox:0.2.12
+          docker tag nginx:latest ghcr.io/just-do1/dify/nginx:latest
+          docker tag ubuntu/squid:latest ghcr.io/just-do1/dify/squid:latest
+          docker tag langgenius/dify-plugin-daemon:0.1.2-local ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.2-local
+          docker tag docker.io/bitnami/postgresql:15.3.0-debian-11-r7 ghcr.io/just-do1/dify/postgresql:15.3.0-debian-11-r7
+          docker tag docker.io/semitechnologies/weaviate:1.19.1 ghcr.io/just-do1/dify/weaviate:1.19.1
+          docker tag docker.io/alpine:latest ghcr.io/just-do1/dify/alpine:latest
+          docker tag docker.io/bitnami/redis:7.0.11-debian-11-r12 ghcr.io/just-do1/dify/redis:7.0.11-debian-11-r12
+          docker tag docker.io/bitnami/redis-sentinel:7.0.11-debian-11-r10 ghcr.io/just-do1/dify/redis-sentinel:7.0.11-debian-11-r10
+          docker tag docker.io/bitnami/redis-exporter:1.50.0-debian-11-r13 ghcr.io/just-do1/dify/redis-exporter:1.50.0-debian-11-r13
+          docker tag docker.io/bitnami/bitnami-shell:11-debian-11-r118 ghcr.io/just-do1/dify/bitnami-shell:11-debian-11-r118
+          
+          docker push ghcr.io/just-do1/dify/dify-api:1.5.0
+          docker push ghcr.io/just-do1/dify/dify-web:1.5.0
+          docker push ghcr.io/just-do1/dify/dify-sandbox:0.2.12
+          docker push ghcr.io/just-do1/dify/nginx:latest
+          docker push ghcr.io/just-do1/dify/squid:latest
+          docker push ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.2-local
+          docker push ghcr.io/just-do1/dify/postgresql:15.3.0-debian-11-r7
+          docker push ghcr.io/just-do1/dify/weaviate:1.19.1
+          docker push ghcr.io/just-do1/dify/alpine:latest
+          docker push ghcr.io/just-do1/dify/redis:7.0.11-debian-11-r12
+          docker push ghcr.io/just-do1/dify/redis-sentinel:7.0.11-debian-11-r10
+          docker push ghcr.io/just-do1/dify/redis-exporter:1.50.0-debian-11-r13
+          docker push ghcr.io/just-do1/dify/bitnami-shell:11-debian-11-r118
+
 
       # - name: download
       #   run: |
