@@ -29,9 +29,45 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull golang:1.23.6
-          docker tag golang:1.23.6 ghcr.io/just-do1/sig-storage/golang:1.23.6
-          docker push ghcr.io/just-do1/sig-storage/golang:1.23.6
+          # docker pull golang:1.23.6
+          # docker tag golang:1.23.6 ghcr.io/just-do1/sig-storage/golang:1.23.6
+          # docker push ghcr.io/just-do1/sig-storage/golang:1.23.6
+          docker pull dhub.kubesre.xyz/postgres:15-alpine
+          docker pull dhub.kubesre.xyz/redis:6-alpine
+          docker pull dockerhub.icu/semitechnologies/weaviate:1.19.0
+          docker pull dockerhub.icu/langgenius/dify-sandbox:0.2.12
+          docker pull dockerhub.icu/ubuntu/squid:latest
+          docker pull dockerhub.icu/langgenius/dify-api:1.4.0
+          docker pull dockerhub.icu/langgenius/dify-api:1.4.0
+          docker pull dockerhub.icu/langgenius/dify-web:1.4.0
+          docker pull dhub.kubesre.xyz/nginx:stable
+          docker pull postgres:15-alpine
+          docker pull dhub.kubesre.xyz/langgenius/dify-plugin-daemon:0.1.0-local
+
+          docker tag dhub.kubesre.xyz/postgres:15-alpine  ghcr.io/just-do1/postgres:15-alpine
+          docker tag dhub.kubesre.xyz/redis:6-alpine  ghcr.io/just-do1/redis:6-alpine
+          docker tag dockerhub.icu/semitechnologies/weaviate:1.19.0  ghcr.io/just-do1/weaviate:1.19.0
+          docker tag dockerhub.icu/langgenius/dify-sandbox:0.2.12  ghcr.io/just-do1/dify-sandbox:0.2.12
+          docker tag dockerhub.icu/ubuntu/squid:latest  ghcr.io/just-do1/squid:latest
+          docker tag dockerhub.icu/langgenius/dify-api:1.4.0  ghcr.io/just-do1/dify-api:1.4.0
+          docker tag dockerhub.icu/langgenius/dify-api:1.4.0  ghcr.io/just-do1/dify-api:1.4.0
+          docker tag dockerhub.icu/langgenius/dify-web:1.4.0  ghcr.io/just-do1/dify-web:1.4.0
+          docker tag dhub.kubesre.xyz/nginx:stable ghcr.io/just-do1/nginx:stable
+          docker tag postgres:15-alpine  ghcr.io/just-do1/postgres:15-alpine
+          docker tag dhub.kubesre.xyz/langgenius/dify-plugin-daemon:0.1.0-local  ghcr.io/just-do1/dify-plugin-daemon:0.1.0-local
+
+          docker push ghcr.io/just-do1/postgres:15-alpine
+          docker push ghcr.io/just-do1/redis:6-alpine
+          docker push ghcr.io/just-do1/weaviate:1.19.0
+          docker push ghcr.io/just-do1/dify-sandbox:0.2.12
+          docker push ghcr.io/just-do1/squid:latest
+          docker push ghcr.io/just-do1/dify-api:1.4.0
+          docker push ghcr.io/just-do1/dify-api:1.4.0
+          docker push ghcr.io/just-do1/dify-web:1.4.0
+          docker push ghcr.io/just-do1/nginx:stable
+          docker push ghcr.io/just-do1/postgres:15-alpine
+          docker push ghcr.io/just-do1/dify-plugin-daemon:0.1.0-local
+          
 
       # - name: download
       #   run: |
