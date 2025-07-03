@@ -44,7 +44,7 @@ jobs:
           docker pull docker.io/bitnami/redis:7.0.11-debian-11-r12
           docker pull docker.io/bitnami/redis-sentinel:7.0.11-debian-11-r10
           docker pull docker.io/bitnami/redis-exporter:1.50.0-debian-11-r13
-          docker pull docker.io/bitnami/bitnami-shell:11-debian-11-r118
+          # docker pull docker.io/bitnami/bitnami-shell:11-debian-11-r118
           
           docker tag langgenius/dify-api:1.5.0 ghcr.io/just-do1/dify/dify-api:1.5.0
           docker tag langgenius/dify-web:1.5.0 ghcr.io/just-do1/dify/dify-web:1.5.0
@@ -58,7 +58,7 @@ jobs:
           docker tag docker.io/bitnami/redis:7.0.11-debian-11-r12 ghcr.io/just-do1/dify/redis:7.0.11-debian-11-r12
           docker tag docker.io/bitnami/redis-sentinel:7.0.11-debian-11-r10 ghcr.io/just-do1/dify/redis-sentinel:7.0.11-debian-11-r10
           docker tag docker.io/bitnami/redis-exporter:1.50.0-debian-11-r13 ghcr.io/just-do1/dify/redis-exporter:1.50.0-debian-11-r13
-          docker tag docker.io/bitnami/bitnami-shell:11-debian-11-r118 ghcr.io/just-do1/dify/bitnami-shell:11-debian-11-r118
+          # docker tag docker.io/bitnami/bitnami-shell:11-debian-11-r118 ghcr.io/just-do1/dify/bitnami-shell:11-debian-11-r118
           
           docker push ghcr.io/just-do1/dify/dify-api:1.5.0
           docker push ghcr.io/just-do1/dify/dify-web:1.5.0
@@ -72,7 +72,7 @@ jobs:
           docker push ghcr.io/just-do1/dify/redis:7.0.11-debian-11-r12
           docker push ghcr.io/just-do1/dify/redis-sentinel:7.0.11-debian-11-r10
           docker push ghcr.io/just-do1/dify/redis-exporter:1.50.0-debian-11-r13
-          docker push ghcr.io/just-do1/dify/bitnami-shell:11-debian-11-r118
+          # docker push ghcr.io/just-do1/dify/bitnami-shell:11-debian-11-r118
 
 
       # - name: download
