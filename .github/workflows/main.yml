@@ -53,8 +53,9 @@ jobs:
           # docker pull opensearchproject/opensearch-dashboards:latest
           # docker pull myscale/myscaledb:1.6.4
           # docker pull docker.elastic.co/elasticsearch/elasticsearch:8.14.3
-          docker pull docker.elastic.co/kibana/kibana:8.14.3
-          docker pull downloads.unstructured.io/unstructured-io/unstructured-api:latest
+          # docker pull docker.elastic.co/kibana/kibana:8.14.3
+          # docker pull downloads.unstructured.io/unstructured-io/unstructured-api:latest
+          docker pull ubuntu:18.04
           
           # docker tag langgenius/dify-api:0.15.3 ghcr.io/just-do1/dify/dify-api:0.15.3
           # docker tag langgenius/dify-api:0.15.3 ghcr.io/just-do1/dify/dify-api:0.15.3
@@ -80,8 +81,9 @@ jobs:
           # docker tag opensearchproject/opensearch-dashboards:latest ghcr.io/just-do1/dify/opensearch-dashboards:latest
           # docker tag myscale/myscaledb:1.6.4 ghcr.io/just-do1/dify/myscaledb:1.6.4
           # docker tag docker.elastic.co/elasticsearch/elasticsearch:8.14.3 ghcr.io/just-do1/dify/elasticsearch:8.14.3
-          docker tag docker.elastic.co/kibana/kibana:8.14.3 ghcr.io/just-do1/dify/kibana:8.14.3
-          docker tag downloads.unstructured.io/unstructured-io/unstructured-api:latest ghcr.io/just-do1/dify/unstructured-api:latest
+          # docker tag docker.elastic.co/kibana/kibana:8.14.3 ghcr.io/just-do1/dify/kibana:8.14.3
+          # docker tag downloads.unstructured.io/unstructured-io/unstructured-api:latest ghcr.io/just-do1/dify/unstructured-api:latest
+          docker tag ubuntu:18.04 ghcr.io/just-do1/ubuntu/ubuntu:18.04
           
           # docker push ghcr.io/just-do1/dify/dify-api:0.15.3
           # docker push ghcr.io/just-do1/dify/dify-api:0.15.3
@@ -107,8 +109,9 @@ jobs:
           # docker push ghcr.io/just-do1/dify/opensearch-dashboards:latest
           # docker push ghcr.io/just-do1/dify/myscaledb:1.6.4
           # docker push ghcr.io/just-do1/dify/elasticsearch:8.14.3
-          docker push ghcr.io/just-do1/dify/kibana:8.14.3
-          docker push ghcr.io/just-do1/dify/unstructured-api:latest
+          # docker push ghcr.io/just-do1/dify/kibana:8.14.3
+          # docker push ghcr.io/just-do1/dify/unstructured-api:latest
+          git push ghcr.io/just-do1/ubuntu/ubuntu:18.04
 
 
       # - name: download
