@@ -45,16 +45,16 @@ jobs:
           # docker pull tensorchord/pgvecto-rs:pg16-v0.3.0
           # docker pull ghcr.io/chroma-core/chroma:0.5.20
           # docker pull quay.io/oceanbase/oceanbase-ce:4.3.3.0-100000142024101215
-          docker pull container-registry.oracle.com/database/free:latest
-          docker pull quay.io/coreos/etcd:v3.5.5
-          docker pull minio/minio:RELEASE.2023-03-20T20-16-18Z
-          docker pull milvusdb/milvus:v2.5.0-beta
-          docker pull opensearchproject/opensearch:latest
-          # docker pull opensearchproject/opensearch-dashboards:latest
-          # docker pull myscale/myscaledb:1.6.4
-          # docker pull docker.elastic.co/elasticsearch/elasticsearch:8.14.3
-          # docker pull docker.elastic.co/kibana/kibana:8.14.3
-          # docker pull downloads.unstructured.io/unstructured-io/unstructured-api:latest
+          # docker pull container-registry.oracle.com/database/free:latest
+          # docker pull quay.io/coreos/etcd:v3.5.5
+          # docker pull minio/minio:RELEASE.2023-03-20T20-16-18Z
+          # docker pull milvusdb/milvus:v2.5.0-beta
+          # docker pull opensearchproject/opensearch:latest
+          docker pull opensearchproject/opensearch-dashboards:latest
+          docker pull myscale/myscaledb:1.6.4
+          docker pull docker.elastic.co/elasticsearch/elasticsearch:8.14.3
+          docker pull docker.elastic.co/kibana/kibana:8.14.3
+          docker pull downloads.unstructured.io/unstructured-io/unstructured-api:latest
           
           # docker tag langgenius/dify-api:0.15.3 ghcr.io/just-do1/dify/dify-api:0.15.3
           # docker tag langgenius/dify-api:0.15.3 ghcr.io/just-do1/dify/dify-api:0.15.3
@@ -72,16 +72,16 @@ jobs:
           # docker tag tensorchord/pgvecto-rs:pg16-v0.3.0 ghcr.io/just-do1/dify/pgvecto-rs:pg16-v0.3.0
           # docker tag ghcr.io/chroma-core/chroma:0.5.20 ghcr.io/just-do1/dify/chroma:0.5.20
           # docker tag quay.io/oceanbase/oceanbase-ce:4.3.3.0-100000142024101215 ghcr.io/just-do1/dify/oceanbase-ce:4.3.3.0-100000142024101215
-          docker tag container-registry.oracle.com/database/free:latest ghcr.io/just-do1/dify/free:latest
-          docker tag quay.io/coreos/etcd:v3.5.5 ghcr.io/just-do1/dify/etcd:v3.5.5
-          docker tag minio/minio:RELEASE.2023-03-20T20-16-18Z ghcr.io/just-do1/dify/minio:RELEASE.2023-03-20T20-16-18Z
-          docker tag milvusdb/milvus:v2.5.0-beta ghcr.io/just-do1/dify/milvus:v2.5.0-beta
-          docker tag opensearchproject/opensearch:latest ghcr.io/just-do1/dify/opensearch:latest
-          # docker tag opensearchproject/opensearch-dashboards:latest ghcr.io/just-do1/dify/opensearch-dashboards:latest
-          # docker tag myscale/myscaledb:1.6.4 ghcr.io/just-do1/dify/myscaledb:1.6.4
-          # docker tag docker.elastic.co/elasticsearch/elasticsearch:8.14.3 ghcr.io/just-do1/dify/elasticsearch:8.14.3
-          # docker tag docker.elastic.co/kibana/kibana:8.14.3 ghcr.io/just-do1/dify/kibana:8.14.3
-          # docker tag downloads.unstructured.io/unstructured-io/unstructured-api:latest ghcr.io/just-do1/dify/unstructured-api:latest
+          # docker tag container-registry.oracle.com/database/free:latest ghcr.io/just-do1/dify/free:latest
+          # docker tag quay.io/coreos/etcd:v3.5.5 ghcr.io/just-do1/dify/etcd:v3.5.5
+          # docker tag minio/minio:RELEASE.2023-03-20T20-16-18Z ghcr.io/just-do1/dify/minio:RELEASE.2023-03-20T20-16-18Z
+          # docker tag milvusdb/milvus:v2.5.0-beta ghcr.io/just-do1/dify/milvus:v2.5.0-beta
+          # docker tag opensearchproject/opensearch:latest ghcr.io/just-do1/dify/opensearch:latest
+          docker tag opensearchproject/opensearch-dashboards:latest ghcr.io/just-do1/dify/opensearch-dashboards:latest
+          docker tag myscale/myscaledb:1.6.4 ghcr.io/just-do1/dify/myscaledb:1.6.4
+          docker tag docker.elastic.co/elasticsearch/elasticsearch:8.14.3 ghcr.io/just-do1/dify/elasticsearch:8.14.3
+          docker tag docker.elastic.co/kibana/kibana:8.14.3 ghcr.io/just-do1/dify/kibana:8.14.3
+          docker tag downloads.unstructured.io/unstructured-io/unstructured-api:latest ghcr.io/just-do1/dify/unstructured-api:latest
           
           # docker push ghcr.io/just-do1/dify/dify-api:0.15.3
           # docker push ghcr.io/just-do1/dify/dify-api:0.15.3
@@ -99,16 +99,16 @@ jobs:
           # docker push ghcr.io/just-do1/dify/pgvecto-rs:pg16-v0.3.0
           # docker push ghcr.io/just-do1/dify/chroma:0.5.20
           # docker push ghcr.io/just-do1/dify/oceanbase-ce:4.3.3.0-100000142024101215
-          docker push ghcr.io/just-do1/dify/free:latest
-          docker push ghcr.io/just-do1/dify/etcd:v3.5.5
-          docker push ghcr.io/just-do1/dify/minio:RELEASE.2023-03-20T20-16-18Z
-          docker push ghcr.io/just-do1/dify/milvus:v2.5.0-beta
-          docker push ghcr.io/just-do1/dify/opensearch:latest
-          # docker push ghcr.io/just-do1/dify/opensearch-dashboards:latest
-          # docker push ghcr.io/just-do1/dify/myscaledb:1.6.4
-          # docker push ghcr.io/just-do1/dify/elasticsearch:8.14.3
-          # docker push ghcr.io/just-do1/dify/kibana:8.14.3
-          # docker push ghcr.io/just-do1/dify/unstructured-api:latest
+          # docker push ghcr.io/just-do1/dify/free:latest
+          # docker push ghcr.io/just-do1/dify/etcd:v3.5.5
+          # docker push ghcr.io/just-do1/dify/minio:RELEASE.2023-03-20T20-16-18Z
+          # docker push ghcr.io/just-do1/dify/milvus:v2.5.0-beta
+          # docker push ghcr.io/just-do1/dify/opensearch:latest
+          docker push ghcr.io/just-do1/dify/opensearch-dashboards:latest
+          docker push ghcr.io/just-do1/dify/myscaledb:1.6.4
+          docker push ghcr.io/just-do1/dify/elasticsearch:8.14.3
+          docker push ghcr.io/just-do1/dify/kibana:8.14.3
+          docker push ghcr.io/just-do1/dify/unstructured-api:latest
 
 
       # - name: download
