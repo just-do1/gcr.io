@@ -35,7 +35,7 @@ jobs:
           docker pull langgenius/dify-sandbox:0.2.12
           docker pull langgenius/dify-plugin-daemon:0.1.2-local
           # docker pull get
-          docker pull vastdata/vastbase-vector
+          # docker pull vastdata/vastbase-vector
           docker pull oceanbase/oceanbase-ce:4.3.5-lts
           docker pull opengauss/opengauss:7.0.0-RC1
           docker pull matrixorigin/matrixone:2.1.1
@@ -46,7 +46,7 @@ jobs:
           docker tag langgenius/dify-sandbox:0.2.12 ghcr.io/just-do1/dify/dify-sandbox:0.2.12
           docker tag langgenius/dify-plugin-daemon:0.1.2-local ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.2-local
           # docker tag get ghcr.io/just-do1/dify/get
-          docker tag vastdata/vastbase-vector ghcr.io/just-do1/dify/vastbase-vector
+          # docker tag vastdata/vastbase-vector ghcr.io/just-do1/dify/vastbase-vector
           docker tag oceanbase/oceanbase-ce:4.3.5-lts ghcr.io/just-do1/dify/oceanbase-ce:4.3.5-lts
           docker tag opengauss/opengauss:7.0.0-RC1 ghcr.io/just-do1/dify/opengauss:7.0.0-RC1
           docker tag matrixorigin/matrixone:2.1.1 ghcr.io/just-do1/dify/matrixone:2.1.1
@@ -57,7 +57,7 @@ jobs:
           docker push ghcr.io/just-do1/dify/dify-sandbox:0.2.12
           docker push ghcr.io/just-do1/dify/dify-plugin-daemon:0.1.2-local
           # docker push ghcr.io/just-do1/dify/get
-          docker push ghcr.io/just-do1/dify/vastbase-vector
+          # docker push ghcr.io/just-do1/dify/vastbase-vector
           docker push ghcr.io/just-do1/dify/oceanbase-ce:4.3.5-lts
           docker push ghcr.io/just-do1/dify/opengauss:7.0.0-RC1
           docker push ghcr.io/just-do1/dify/matrixone:2.1.1
