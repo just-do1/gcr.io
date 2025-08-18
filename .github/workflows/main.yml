@@ -29,11 +29,14 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull milvusdb/milvus-operator:v1.3.0
+          docker pull minio/minio:RELEASE.2024-12-18T13-15-44Z
+          docker pull docker.io/milvusdb/etcd:3.5.18-r1
           
-          docker tag milvusdb/milvus-operator:v1.3.0 ghcr.io/just-do1/milvusdb/milvus-operator:v1.3.0
+          docker tag minio/minio:RELEASE.2024-12-18T13-15-44Z ghcr.io/just-do1/minio/minio:RELEASE.2024-12-18T13-15-44Z
+          docker tag docker.io/milvusdb/etcd:3.5.18-r1 ghcr.io/just-do1/milvusdb/etcd:3.5.18-r1
           
-          docker push ghcr.io/just-do1/milvusdb/milvus-operator:v1.3.0
+          docker push ghcr.io/just-do1/minio/minio:RELEASE.2024-12-18T13-15-44Z
+          docker push ghcr.io/just-do1/milvusdb/etcd:3.5.18-r1
 
 
       # - name: download
