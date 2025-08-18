@@ -29,11 +29,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull n8nio/n8n
+          docker pull milvusdb/milvus-operator:v1.3.0
           
-          docker tag n8nio/n8n ghcr.io/just-do1/n8nio/n8n
+          docker tag milvusdb/milvus-operator:v1.3.0 ghcr.io/just-do1/milvusdb/milvus-operator:v1.3.0
           
-          docker push ghcr.io/just-do1/n8nio/n8n
+          docker push ghcr.io/just-do1/milvusdb/milvus-operator:v1.3.0
 
 
       # - name: download
