@@ -29,11 +29,17 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull debain:latest
+          docker pull bitnami/postgresql:latest
+          docker pull bitnami/os-shell:latest
+          docker pull bitnami/postgres-exporter:latest
           
-          docker tag debain:latest ghcr.io/just-do1/debain:latest
-          
-          docker push ghcr.io/just-do1/debain:latest
+          docker tag bitnami/postgresql:latest ghcr.io/just-do1/bitnami/postgresql:latest
+          docker tag bitnami/os-shell:latest ghcr.io/just-do1/bitnami/os-shell:latest
+          docker tag bitnami/postgres-exporter:latest ghcr.io/just-do1/bitnami/postgres-exporter:latest
+
+          docker push ghcr.io/just-do1/bitnami/postgresql:latest
+          docker push ghcr.io/just-do1/bitnami/os-shell:latest
+          docker push ghcr.io/just-do1/bitnami/postgres-exporter:latest
 
       # - name: download
       #   run: |
