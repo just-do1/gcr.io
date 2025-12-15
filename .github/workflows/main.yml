@@ -29,17 +29,23 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull bitnami/postgresql:latest
-          docker pull bitnami/os-shell:latest
-          docker pull bitnami/postgres-exporter:latest
-          
-          docker tag bitnami/postgresql:latest ghcr.io/just-do1/bitnami/postgresql:latest
-          docker tag bitnami/os-shell:latest ghcr.io/just-do1/bitnami/os-shell:latest
-          docker tag bitnami/postgres-exporter:latest ghcr.io/just-do1/bitnami/postgres-exporter:latest
+          docker pull codercom/enterprise-base:ubuntu
 
-          docker push ghcr.io/just-do1/bitnami/postgresql:latest
-          docker push ghcr.io/just-do1/bitnami/os-shell:latest
-          docker push ghcr.io/just-do1/bitnami/postgres-exporter:latest
+          docker tag codercom/enterprise-base:ubuntu ghcr.io/just-do1/codercom/enterprise-base:ubuntu
+
+          docker push ghcr.io/just-do1/codercom/enterprise-base:ubuntu
+          
+          # docker pull bitnami/postgresql:latest
+          # docker pull bitnami/os-shell:latest
+          # docker pull bitnami/postgres-exporter:latest
+          
+          # docker tag bitnami/postgresql:latest ghcr.io/just-do1/bitnami/postgresql:latest
+          # docker tag bitnami/os-shell:latest ghcr.io/just-do1/bitnami/os-shell:latest
+          # docker tag bitnami/postgres-exporter:latest ghcr.io/just-do1/bitnami/postgres-exporter:latest
+
+          # docker push ghcr.io/just-do1/bitnami/postgresql:latest
+          # docker push ghcr.io/just-do1/bitnami/os-shell:latest
+          # docker push ghcr.io/just-do1/bitnami/postgres-exporter:latest
 
       # - name: download
       #   run: |
