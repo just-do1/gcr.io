@@ -29,11 +29,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull codercom/enterprise-base:ubuntu
+          docker pull --platform linux/arm64 ubuntu:22.04
 
-          docker tag codercom/enterprise-base:ubuntu ghcr.io/just-do1/codercom/enterprise-base:ubuntu
+          docker tag ubuntu:22.04 ghcr.io/just-do1/ubuntu-arm:22.04
 
-          docker push ghcr.io/just-do1/codercom/enterprise-base:ubuntu
+          docker push ghcr.io/just-do1/ubuntu-arm:22.04
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
