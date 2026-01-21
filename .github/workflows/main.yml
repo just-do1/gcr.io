@@ -34,8 +34,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ${{ env.IMAGE_BASE }}/ubuntu:22.04
-            ${{ env.IMAGE_BASE }}/ubuntu:22.04-${{ github.sha }}
+            ghcr.io/just-do1/ubuntu:22.04
           # 可选：开启 build cache 来加速增量构建
       - name: Docker pull and push
         run: |
