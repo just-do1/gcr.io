@@ -29,11 +29,20 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull --platform linux/arm64 ubuntu:22.04
+          docker buildx build \
+            --platform linux/amd64,linux/arm64 \  # 指定双架构
+            --tag ghcr.io/just-do1/ubuntu-arm:22.04 \  # 目标 ghcr 镜像名
+            --push \  # 自动推送多架构清单+镜像层
+            --no-cache \  # 避免缓存干扰（可选）
+            -f - . <<EOF
+          # 基于官方 Ubuntu 22.04 多架构镜像（无需修改，直接复用）
+          FROM ubuntu:22.04
+          EOF
+          # docker pull --platform linux/arm64, ubuntu:22.04
 
-          docker tag ubuntu:22.04 ghcr.io/just-do1/ubuntu-arm:22.04
+          # docker tag ubuntu:22.04 ghcr.io/just-do1/ubuntu-arm:22.04
 
-          docker push ghcr.io/just-do1/ubuntu-arm:22.04
+          # docker push ghcr.io/just-do1/ubuntu-arm:22.04
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
