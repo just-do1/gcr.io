@@ -39,11 +39,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          # docker pull --platform linux/arm64 ubuntu:22.04
+          docker pull mysql:8.0.36
 
-          # docker tag ubuntu:22.04 ghcr.io/just-do1/ubuntu-arm:22.04
+          docker tag mysql:8.0.36 ghcr.io/just-do1/mysql:8.0.36
 
-          # docker push ghcr.io/just-do1/ubuntu-arm:22.04
+          docker push ghcr.io/just-do1/mysql:8.0.36
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
