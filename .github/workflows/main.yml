@@ -26,18 +26,30 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & Push Multi-Arch Image
+        uses: docker/build-push-action@v5
+        with:
+          # 无 Dockerfile 时，用内联上下文（对应原命令的 -f - . <<EOF）
+          context: .
+          # 内联 Dockerfile 内容（复用官方 Ubuntu 22.04 镜像）
+          file: -
+          dockerfile: |
+            FROM ubuntu:22.04
+          # 指定要构建的架构（amd64 + arm64，可追加其他架构如 arm/v7）
+          platforms: linux/amd64,linux/arm64
+          # 镜像标签：私有仓库地址 + 镜像名 + 标签（替换为你的实际值）
+          tags: ${{ secrets.PRIVATE_REGISTRY_URL }}/ubuntu:22.04
+          # 推送镜像（对应原命令的 --push）
+          push: true
+          # 禁用缓存（对应原命令的 --no-cache，可选：测试用，生产可去掉）
+          no-cache: true
+          # 显示构建进度（方便调试）
+          progress: plain
+          
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker buildx build \
-            --platform linux/amd64,linux/arm64 \  # 指定双架构
-            --tag ghcr.io/just-do1/ubuntu-arm:22.04 \  # 目标 ghcr 镜像名
-            --push \  # 自动推送多架构清单+镜像层
-            --no-cache \  # 避免缓存干扰（可选）
-            -f - . <<EOF
-          # 基于官方 Ubuntu 22.04 多架构镜像（无需修改，直接复用）
-          FROM ubuntu:22.04
-          EOF
           # docker pull --platform linux/arm64, ubuntu:22.04
 
           # docker tag ubuntu:22.04 ghcr.io/just-do1/ubuntu-arm:22.04
