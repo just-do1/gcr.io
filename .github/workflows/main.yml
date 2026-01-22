@@ -29,11 +29,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull multiarch/qemu-user-static:latest
+          docker pull docker.io/bitnami/mysql:8.0.31-debian-11-r10
 
-          docker tag multiarch/qemu-user-static:latest ghcr.io/just-do1/multiarch/qemu-user-static:latest
+          docker tag docker.io/bitnami/mysql:8.0.31-debian-11-r10 ghcr.io/just-do1/bitnami/mysql:8.0.31-debian-11-r10
 
-          docker push ghcr.io/just-do1/multiarch/qemu-user-static:latest
+          docker push ghcr.io/just-do1/bitnami/mysql:8.0.31-debian-11-r10
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
