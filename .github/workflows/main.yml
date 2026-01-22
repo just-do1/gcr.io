@@ -29,11 +29,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull docker.io/bitnami/mysql:8.0.31-debian-11-r10
+          docker pull mysql:8.0.31
 
-          docker tag docker.io/bitnami/mysql:8.0.31-debian-11-r10 ghcr.io/just-do1/bitnami/mysql:8.0.31-debian-11-r10
+          docker tag mysql:8.0.31 ghcr.io/just-do1/mysql:8.0.31
 
-          docker push ghcr.io/just-do1/bitnami/mysql:8.0.31-debian-11-r10
+          docker push ghcr.io/just-do1/mysql:8.0.31
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
