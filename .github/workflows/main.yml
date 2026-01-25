@@ -29,11 +29,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull ler9/rtsp-simple-server
+          docker pull bluenviron/mediamtx:1
 
-          docker tag ler9/rtsp-simple-server ghcr.io/just-do1/ler9/rtsp-simple-server
+          docker tag bluenviron/mediamtx:1 ghcr.io/just-do1/bluenviron/mediamtx:1
 
-          docker push ghcr.io/just-do1/ler9/rtsp-simple-server
+          docker push ghcr.io/just-do1/bluenviron/mediamtx:1
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
