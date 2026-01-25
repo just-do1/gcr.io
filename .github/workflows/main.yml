@@ -29,11 +29,11 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull nginx:1.28.0
+          docker pull ler9/rtsp-simple-server
 
-          docker tag nginx:1.28.0 ghcr.io/just-do1/nginx:1.28.0
+          docker tag ler9/rtsp-simple-server ghcr.io/just-do1/ler9/rtsp-simple-server
 
-          docker push ghcr.io/just-do1/nginx:1.28.0
+          docker push ghcr.io/just-do1/ler9/rtsp-simple-server
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
