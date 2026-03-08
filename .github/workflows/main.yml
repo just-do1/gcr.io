@@ -29,11 +29,22 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull filebrowser/filebrowser:v2.57.0-s6
+          docker pull golang:1.24-alpine
+          docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
+          docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker tag filebrowser/filebrowser:v2.57.0-s6 ghcr.io/just-do1/filebrowser/filebrowser:v2.57.0-s6
+          docker pull alpine:latest
+          docker tag alpine:latest ghcr.io/just-do1/alpine:latest
+          docker push ghcr.io/just-do1/alpine:latest
 
-          docker push ghcr.io/just-do1/filebrowser/filebrowser:v2.57.0-s6
+          docker pull node:18-alpine
+          docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
+          docker push ghcr.io/just-do1/node:18-alpine
+
+          docker pull nginx:alpine
+          docker tag nginx:alpine ghcr.io/just-do1/nginx:alpine
+          docker push ghcr.io/just-do1/nginx:alpine
+
           
           # docker pull bitnami/postgresql:latest
           # docker pull bitnami/os-shell:latest
