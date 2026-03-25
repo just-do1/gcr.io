@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull alpine:latest
-          docker tag alpine:latest ghcr.io/just-do1/alpine:latest
-          docker push ghcr.io/just-do1/alpine:latest
+          docker pull qdrant/qdrant:v1.17
+          docker tag qdrant/qdrant:v1.17 ghcr.io/just-do1/qdrant/qdrant:v1.17
+          docker push ghcr.io/just-do1/qdrant/qdrant:v1.17
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
