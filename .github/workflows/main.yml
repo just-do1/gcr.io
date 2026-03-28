@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull qdrant/qdrant:v1.17
-          docker tag qdrant/qdrant:v1.17 ghcr.io/just-do1/qdrant/qdrant:v1.17
-          docker push ghcr.io/just-do1/qdrant/qdrant:v1.17
+          docker pull insightplatform/fake-rtsp-stream
+          docker tag insightplatform/fake-rtsp-stream ghcr.io/just-do1/insightplatform/fake-rtsp-stream
+          docker push ghcr.io/just-do1/insightplatform/fake-rtsp-stream
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
