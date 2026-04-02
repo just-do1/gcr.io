@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull docker:29.3.1-cli
-          docker tag docker:29.3.1-cli ghcr.io/just-do1/docker:29.3.1-cli
-          docker push ghcr.io/just-do1/docker:29.3.1-cli
+          docker pull dgtlmoon/changedetection.io:0.54
+          docker tag dgtlmoon/changedetection.io:0.54 ghcr.io/just-do1/dgtlmoon/changedetection.io:0.54
+          docker push ghcr.io/just-do1/dgtlmoon/changedetection.io:0.54
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
