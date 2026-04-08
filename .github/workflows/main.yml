@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull node:18-bullseye-slim
-          docker tag node:18-bullseye-slim ghcr.io/just-do1/node:18-bullseye-slim
-          docker push ghcr.io/just-do1/node:18-bullseye-slim
+          docker pull node:20-slim 
+          docker tag node:20-slim ghcr.io/just-do1/node:20-slim
+          docker push ghcr.io/just-do1/node:20-slim
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
