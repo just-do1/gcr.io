@@ -33,7 +33,7 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          pull nousresearch/hermes-agent:dafe443beba74384871e2c79d5b17db8bc51880e
+          docker pull nousresearch/hermes-agent:dafe443beba74384871e2c79d5b17db8bc51880e
           docker tag node:20.20.2 ghcr.io/just-do1/nousresearch/hermes-agent:dafe443beba74384871e2c79d5b17db8bc51880e
           docker push ghcr.io/just-do1/nousresearch/hermes-agent:dafe443beba74384871e2c79d5b17db8bc51880e
 
