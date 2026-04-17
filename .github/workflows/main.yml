@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull otel/opentelemetry-collector:0.149.0
-          docker tag otel/opentelemetry-collector:0.149.0 ghcr.io/just-do1/otel/opentelemetry-collector:0.149.0
-          docker push ghcr.io/just-do1/otel/opentelemetry-collector:0.149.0
+          docker pull tsl0922/ttyd:1.7.8
+          docker tag tsl0922/ttyd:1.7.8 ghcr.io/just-do1/tsl0922/ttyd:1.7.8
+          docker push ghcr.io/just-do1/tsl0922/ttyd:1.7.8
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
