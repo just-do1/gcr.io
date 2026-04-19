@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull tsl0922/ttyd:1.7.8
-          docker tag tsl0922/ttyd:1.7.8 ghcr.io/just-do1/tsl0922/ttyd:1.7.8
-          docker push ghcr.io/just-do1/tsl0922/ttyd:1.7.8
+          docker pull nousresearch/hermes-agent:v2026.4.16
+          docker tag nousresearch/hermes-agent:v2026.4.16 ghcr.io/just-do1/nousresearch/hermes-agent:v2026.4.16
+          docker push ghcr.io/just-do1/nousresearch/hermes-agent:v2026.4.16
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
