@@ -33,9 +33,9 @@ jobs:
           # docker tag golang:1.24-alpine ghcr.io/just-do1/golang:1.24-alpine
           # docker push ghcr.io/just-do1/golang:1.24-alpine
 
-          docker pull pgvector/pgvector:0.8.2-pg18-trixie
-          docker tag pgvector/pgvector:0.8.2-pg18-trixie ghcr.io/just-do1/pgvector/pgvector:0.8.2-pg18-trixie
-          docker push ghcr.io/just-do1/pgvector/pgvector:0.8.2-pg18-trixie
+          docker pull chrislusf/seaweedfs:4.21
+          docker tag chrislusf/seaweedfs:4.21 ghcr.io/just-do1/chrislusf/seaweedfs:4.21
+          docker push ghcr.io/just-do1/chrislusf/seaweedfs:4.21
 
           # docker pull node:18-alpine
           # docker tag node:18-alpine ghcr.io/just-do1/node:18-alpine
