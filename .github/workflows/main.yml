@@ -29,9 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull python:3.12-slim:
-          docker tag python:3.12-slim: ghcr.io/just-do1/python:3.12-slim:
-          docker push ghcr.io/just-do1/python:3.12-slim:
+          docker pull python:3.12-slim
+          docker tag python:3.12-slim ghcr.io/just-do1/python:3.12-slim
+          docker push ghcr.io/just-do1/python:3.12-slim
 
           # docker pull dpage/pgadmin4:9.14.0
           # docker tag dpage/pgadmin4:9.14.0 ghcr.io/just-do1/dpage/pgadmin4:9.14.0
