@@ -29,9 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull postgres:17-alpine
-          docker tag postgres:17-alpine ghcr.io/just-do1/postgres:17-alpine
-          docker push ghcr.io/just-do1/postgres:17-alpine
+          docker pull nousresearch/hermes-agent:v2026.5.7
+          docker tag nousresearch/hermes-agent:v2026.5.7 ghcr.io/just-do1/nousresearch/hermes-agent:v2026.5.7
+          docker push ghcr.io/just-do1/nousresearch/hermes-agent:v2026.5.7
 
           # docker pull dpage/pgadmin4:9.14.0
           # docker tag dpage/pgadmin4:9.14.0 ghcr.io/just-do1/dpage/pgadmin4:9.14.0
