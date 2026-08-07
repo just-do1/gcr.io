@@ -29,13 +29,25 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull node:20-alpine
-          docker tag node:20-alpine ghcr.io/just-do1/node:20-alpine
-          docker push ghcr.io/just-do1/node:20-alpine
+          docker pull neo4j:5.26
+          docker tag neo4j:5.26 ghcr.io/just-do1/neo4j:5.26
+          docker push ghcr.io/just-do1/neo4j:5.26
+          
+          docker pull pgvector/pgvector:pg17
+          docker tag pgvector/pgvector:pg17 ghcr.io/just-do1/pgvector/pgvector:pg17
+          docker push ghcr.io/just-do1/pgvector/pgvector:pg17
+          
+          docker pull redis:7-alpine
+          docker tag redis:7-alpine ghcr.io/just-do1/redis:7-alpine
+          docker push ghcr.io/just-do1/redis:7-alpine
+          
+          docker pull redislabs/redisinsight:latest
+          docker tag redislabs/redisinsight:latest ghcr.io/just-do1/redislabs/redisinsight:latest
+          docker push ghcr.io/just-do1/redislabs/redisinsight:latest
 
-          docker pull nginx:1.27-alpine
-          docker tag nginx:1.27-alpine ghcr.io/just-do1/nginx:1.27-alpine
-          docker push ghcr.io/just-do1/nginx:1.27-alpine
+          # docker pull nginx:1.27-alpine
+          # docker tag nginx:1.27-alpine ghcr.io/just-do1/nginx:1.27-alpine
+          # docker push ghcr.io/just-do1/nginx:1.27-alpine
 
           # docker pull dpage/pgadmin4:9.14.0
           # docker tag dpage/pgadmin4:9.14.0 ghcr.io/just-do1/dpage/pgadmin4:9.14.0
