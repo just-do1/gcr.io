@@ -29,21 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull neo4j:5.26
-          docker tag neo4j:5.26 ghcr.io/just-do1/neo4j:5.26
-          docker push ghcr.io/just-do1/neo4j:5.26
-          
-          docker pull pgvector/pgvector:pg17
-          docker tag pgvector/pgvector:pg17 ghcr.io/just-do1/pgvector/pgvector:pg17
-          docker push ghcr.io/just-do1/pgvector/pgvector:pg17
-          
-          docker pull redis:7-alpine
-          docker tag redis:7-alpine ghcr.io/just-do1/redis:7-alpine
-          docker push ghcr.io/just-do1/redis:7-alpine
-          
-          docker pull redislabs/redisinsight:latest
-          docker tag redislabs/redisinsight:latest ghcr.io/just-do1/redislabs/redisinsight:latest
-          docker push ghcr.io/just-do1/redislabs/redisinsight:latest
+          docker pull node:22
+          docker tag node:22 ghcr.io/just-do1/node:22
+          docker push ghcr.io/just-do1/node:22
 
           # docker pull nginx:1.27-alpine
           # docker tag nginx:1.27-alpine ghcr.io/just-do1/nginx:1.27-alpine
