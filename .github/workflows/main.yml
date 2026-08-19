@@ -29,9 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull node:22
-          docker tag node:22 ghcr.io/just-do1/node:22
-          docker push ghcr.io/just-do1/node:22
+          docker pull ollama/ollama:0.32.14
+          docker tag ollama/ollama:0.32.14 ghcr.io/just-do1/ollama/ollama:0.32.14
+          docker push ghcr.io/just-do1/ollama/ollama:0.32.14
 
           # docker pull nginx:1.27-alpine
           # docker tag nginx:1.27-alpine ghcr.io/just-do1/nginx:1.27-alpine
