@@ -29,9 +29,30 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull ollama/ollama:0.32.14
-          docker tag ollama/ollama:0.32.14 ghcr.io/just-do1/ollama/ollama:0.32.14
-          docker push ghcr.io/just-do1/ollama/ollama:0.32.14
+          docker pull docker.langfuse.com/langfuse/langfuse-worker:4
+          docker tag docker.langfuse.com/langfuse/langfuse-worker:4 ghcr.io/just-do1/langfuse/langfuse-worker:4
+          docker push ghcr.io/just-do1/langfuse/langfuse-worker:4
+          
+          docker pull docker.langfuse.com/langfuse/langfuse:4
+          docker tag docker.langfuse.com/langfuse/langfuse:4 ghcr.io/just-do1/langfuse/langfuse:4
+          docker ghcr.io/just-do1/langfuse/langfuse:4
+          
+          docker pull docker.io/clickhouse/clickhouse-server:25.12
+          docker tag docker.io/clickhouse/clickhouse-server:25.12 ghcr.io/just-do1/clickhouse/clickhouse-server:25.12
+          docker push ghcr.io/just-do1/clickhouse/clickhouse-server:25.12
+          
+          docker pull cgr.dev/chainguard/minio
+          docker tag cgr.dev/chainguard/minio ghcr.io/just-do1/chainguard/minio
+          docker push ghcr.io/just-do1/chainguard/minio
+          
+          docker pull docker.io/redis:7
+          docker tag docker.io/redis:7 ghcr.io/just-do1/redis:7
+          docker push ghcr.io/just-do1/redis:7
+          
+          docker pull docker.io/postgres:17
+          docker tag docker.io/postgres:17 ghcr.io/just-do1/postgres:17
+          docker push ghcr.io/just-do1/postgres:17
+
 
           # docker pull nginx:1.27-alpine
           # docker tag nginx:1.27-alpine ghcr.io/just-do1/nginx:1.27-alpine
