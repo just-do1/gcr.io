@@ -29,9 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull docker.io/bitnami/mysql:8.0.31-debian-11-r10
-          docker tag docker.io/bitnami/mysql:8.0.31-debian-11-r10 ghcr.io/just-do1/bitnami/mysql:8.0.31-debian-11-r10
-          docker push ghcr.io/just-do1/bitnami/mysql:8.0.31-debian-11-r10
+          docker pull henrygd/beszel:0.21
+          docker tag henrygd/beszel:0.21 ghcr.io/just-do1/henrygd/beszel:0.21
+          docker push ghcr.io/just-do1/henrygd/beszel:0.21
           
           # docker pull docker.langfuse.com/langfuse/langfuse:4
           # docker tag docker.langfuse.com/langfuse/langfuse:4 ghcr.io/just-do1/langfuse/langfuse:4
