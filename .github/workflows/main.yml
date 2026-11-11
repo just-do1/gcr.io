@@ -29,9 +29,9 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull henrygd/beszel-agent:0.21
-          docker tag henrygd/beszel-agent:0.21 ghcr.io/just-do1/henrygd/beszel-agent:0.21
-          docker push ghcr.io/just-do1/henrygd/beszel-agent:0.21
+          docker pull registry-1.docker.io/bitnami/postgresql:latest
+          docker tag registry-1.docker.io/bitnami/postgresql:latest ghcr.io/just-do1/bitnami/postgresql:latest
+          docker push ghcr.io/just-do1/bitnami/postgresql:latest
           
           # docker pull docker.langfuse.com/langfuse/langfuse:4
           # docker tag docker.langfuse.com/langfuse/langfuse:4 ghcr.io/just-do1/langfuse/langfuse:4
