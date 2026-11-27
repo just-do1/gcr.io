@@ -1,5 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
+
 name: GItGoogleContainer
 
 # Controls when the action will run. 
@@ -29,18 +30,14 @@ jobs:
       - name: Docker pull and push
         run: |
           echo "abc"
-          docker pull weishaw/sub2api:0.2.24
-          docker tag weishaw/sub2api:0.2.24 ghcr.io/just-do1/weishaw/sub2api:0.2.24
-          docker push ghcr.io/just-do1/weishaw/sub2api:0.2.24
+          docker pull diegosouzapw/omniroute:3.8.54-web-bun
+          docker tag diegosouzapw/omniroute:3.8.54-web-bun ghcr.io/just-do1/diegosouzapw/omniroute:3.8.54-web-bun
+          docker push ghcr.io/just-do1/diegosouzapw/omniroute:3.8.54-web-bun
 
-          docker pull postgres:18-alpine
-          docker tag postgres:18-alpine ghcr.io/just-do1/postgres:18-alpine
-          docker push ghcr.io/just-do1/postgres:18-alpine
+          docker pull caddy:2.11.9
+          docker tag caddy:2.11.9 ghcr.io/just-do1/caddy:2.11.9
+          docker push ghcr.io/just-do1/caddy:2.11.9
 
-          docker pull redis:8-alpine
-          docker tag redis:8-alpine ghcr.io/just-do1/redis:8-alpine
-          docker push ghcr.io/just-do1/redis:8-alpine
-          
           # docker pull docker.langfuse.com/langfuse/langfuse:4
           # docker tag docker.langfuse.com/langfuse/langfuse:4 ghcr.io/just-do1/langfuse/langfuse:4
           # docker push ghcr.io/just-do1/langfuse/langfuse:4
